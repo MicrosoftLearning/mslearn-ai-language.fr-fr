@@ -1,2 +1,2 @@
-# mslearn-ai-language.fr-fr
-French repo
+# mslearn-ai-language
+Fichiers de labo pour les modules Azure AI Language

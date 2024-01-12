@@ -6,33 +6,33 @@ lab:
 
 # Analyser le texte
 
-**Azure Language** prend en charge l’analyse du texte, notamment la détection de langue, l’analyse des sentiments, l’extraction de phrases clés et la reconnaissance d’entité.
+**Azure Language** prend en charge l’analyse du texte, notamment la détection de langue, l’analyse des sentiments, l’extraction d’expressions clés et la reconnaissance d’entité.
 
-Par exemple, supposons qu’une agence de voyages souhaite traiter les avis d’hôtel soumis au site web de l’entreprise. En utilisant Azure AI Language, il est possible de déterminer la langue dans laquelle chaque avis est écrit, le sentiment (positif, neutre ou négatif) des avis, les expressions clés qui peuvent indiquer les principaux sujets abordés dans l’avis et les entités nommées, comme les lieux, les monuments ou les personnes mentionnées dans les avis.
+Par exemple, supposons qu’une agence de voyages souhaite traiter les avis d’hôtel soumis au site web de l’entreprise. En utilisant le service Azure AI Language, ils peuvent déterminer la langue dans laquelle chaque révision est écrite, le sentiment (positif, neutre ou négatif) des avis, les expressions clés qui peuvent indiquer les principaux sujets abordés dans l’avis et les entités nommées, telles que les lieux, les repères ou les personnes mentionnées dans les avis.
 
-## Configurer une ressource *Azure AI Language*
+## Configurer une ressource *Azure AI Language*
 
-Si vous n’en avez pas encore, vous devez configurer une ressource pour le **service Azure AI Language** dans votre abonnement Azure.
+Si vous n’avez pas encore de ressource dans votre abonnement, vous devez configurer une ressource du **service Azure AI Language** dans votre abonnement Azure.
 
 1. Ouvrez le portail Azure à l’adresse `https://portal.azure.com` et connectez-vous avec le compte Microsoft associé à votre abonnement Azure.
-1. Recherchez **Services Azure AI** à l’aide du champ disponible dans la partie supérieure. Sélectionnez **Créer** sous **Service Language**.
+1. Recherchez **Azure AI Services** à l’aide du champ de recherche situé en haut. Sélectionnez ensuite **Créer** dans les résultats, sous **Service de langage**.
 1. Sélectionnez **Continuer pour créer votre ressource**.
-1. Configurez la ressource avec les paramètres suivants :
+1. Provisionnez la ressource à l’aide des paramètres suivants :
     - **Abonnement** : *votre abonnement Azure*.
-    - **Groupe de ressources** : *sélectionnez ou créez un groupe de ressources*.
-    - **Région** : *choisissez n’importe quelle région disponible*.
+    - **Groupe de ressources** : *créez ou sélectionnez un groupe de ressources*.
+    - **Région** : *choisissez une région disponible*.
     - **Nom** : *entrez un nom unique.*
-    - **Niveau tarifaire** : sélectionnez **F0** (*gratuit*). Si cette option n’est pas disponible, sélectionnez **S** (*standard*).
+    - **Niveau tarifaire** : sélectionnez **F0** (*gratuit*) ou **S** (*standard*) si F n’est pas disponible.
     - **Mention sur l’IA responsable** : J’accepte.
 1. Sélectionnez **Revoir + créer**.
 1. Attendez la fin du déploiement, puis accédez à la ressource déployée.
-1. Consultez la page **Clés et points de terminaison**. Plus loin dans l’exercice, vous aurez besoin des informations disponibles sur cette page.
+1. Affichez la page **Clés et points de terminaison**. Vous aurez besoin des informations de cette page plus loin dans l’exercice.
 
-## Préparer le développement d’une application dans Visual Studio Code
+## Préparer le développement d’une application dans Visual Studio Code
 
-Vous allez développer votre application d’analyse de texte à l’aide de Visual Studio Code. Les fichiers de code de votre application ont été fournis dans un référentiel GitHub.
+Vous allez développer votre application d’analyse de texte à l’aide de Visual Studio Code. Les fichiers de code de votre application ont été fournis dans un référentiel GitHub.
 
-> **Conseil** : si vous avez déjà cloné le référentiel **mslearn-ai-language**, ouvrez-le dans Visual Studio Code. Dans le cas contraire, procédez comme suit pour le cloner dans votre environnement de développement.
+> **Conseil** : si vous avez déjà cloné le référentiel **mslearn-ai-language**, ouvrez-le dans Visual Studio Code. Dans le cas contraire, procédez comme suit pour le cloner dans votre environnement de développement.
 
 1. Démarrez Visual Studio Code.
 2. Ouvrez la palette (Maj+CTRL+P) et exécutez une commande **Git : Cloner** pour cloner le référentiel `https://github.com/MicrosoftLearning/mslearn-ai-language` vers un dossier local (peu importe quel dossier).
@@ -43,10 +43,10 @@ Vous allez développer votre application d’analyse de texte à l’aide de Vis
 
 ## Configuration de votre application
 
-Des applications pour C# et Python sont fournies, ainsi qu’un exemple de fichier texte que vous utiliserez pour tester le résumé. Les deux applications présentent les mêmes fonctionnalités. Premièrement, vous allez terminer certaines parties clés de l’application pour lui permettre d’utiliser votre ressource Azure AI Language.
+Des applications pour C# et Python sont fournies, ainsi qu’un exemple de fichier texte que vous utiliserez pour tester le résumé. Les deux applications présentent les mêmes fonctionnalités. Pour commencer, vous allez définir certaines parties clés de l’application pour lui permettre d’utiliser votre ressource Azure AI Language.
 
-1. Dans Visual Studio Code, dans le volet **Explorateur**, accédez au dossier **Labfiles/01-analyze-text** et développez le dossier **CSharp** ou **Python** en fonction de votre préférence de langage, ainsi que le dossier **text-analytics** qu’il contient. Chaque dossier contient les fichiers propres au langage d’une application dans laquelle vous allez intégrer des fonctionnalités d’analyse de texte d’Azure AI Language.
-2. Cliquez avec le bouton droit sur le dossier **text-analytics**, qui contient vos fichiers de code, et ouvrez un terminal intégré. Installez ensuite le package du kit de développement logiciel (SDK) d’analyse de texte d’Azure AI Language en exécutant la commande appropriée en fonction de votre préférence de langage :
+1. Dans Visual Studio Code, dans le volet **Explorateur**, accédez au dossier **Labfiles/01-analyze-text** et développez le dossier **CSharp** ou **Python** selon vos préférencesde language, ainsi que le dossier **text-analytics** qu’il contient. Chaque dossier contient les fichiers spécifiques au langage d’application où vous allez intégrer la fonctionnalité d’analyse de texte d’Azure AI Language.
+2. Cliquez avec le bouton droit sur le dossier **text-analytics** contenant vos fichiers de code et ouvrez un terminal intégré. Ensuite, installez le package SDK d’analyse de texte d’Azure AI Language en exécutant la commande correspondante du langage choisi. Si vous avez choisi Python, installez également le package `dotenv` :
 
     **C# :**
 
@@ -58,14 +58,15 @@ Des applications pour C# et Python sont fournies, ainsi qu’un exemple de fichi
 
     ```
     pip install azure-ai-textanalytics==5.3.0
+    pip install python-dotenv
     ```
 
-3. Dans le volet **Explorateur**, dans le dossier **text-analytics**, ouvrez le fichier de configuration correspondant à votre langage préféré.
+3. Dans le volet **Explorateur**, dans le dossier **text-analytics**, ouvrez le fichier config correspondant au langage choisi.
 
     - **C#** : appsettings.json
     - **Python** : .env
     
-4. Mettez à jour les valeurs de configuration de sorte à inclure un **point de terminaison** et une **clé** de la ressource Azure Language que vous avez créée (disponible sur la page **Clés et point de terminaison** de votre ressource Azure AI Language dans le Portail Azure).
+4. Mettez à jour les valeurs de configuration pour inclure le **point de terminaison** et une **clé** de la ressource Azure AI Language que vous avez créée (disponible sur la page **Clés et point de terminaison** de votre ressource Azure AI Language, dans le portail Azure).
 5. Enregistrez le fichier de configuration.
 
 6. Notez que le dossier **text-analysis** contient un fichier de code pour l’application cliente :
@@ -91,7 +92,7 @@ Des applications pour C# et Python sont fournies, ainsi qu’un exemple de fichi
     from azure.ai.textanalytics import TextAnalyticsClient
     ```
 
-7. Dans la fonction **Main**, notez que le code permettant de charger le point de terminaison et la clé du service Azure AI Language à partir du fichier de configuration a déjà été fourni. Recherchez ensuite le commentaire **Créer un client à l’aide du point de terminaison et de la clé**, puis ajoutez le code suivant pour créer un client pour l’API Analyse de texte :
+7. Dans la fonction **Main**, notez que le code pour charger le point de terminaison et la clé du service Azure AI Language à partir du fichier de configuration a déjà été fourni. Recherchez ensuite le commentaire **Créer un client à l’aide du point de terminaison et de la clé**, puis ajoutez le code suivant pour créer un client pour l’API Analyse de texte :
 
     **C#**  : Programs.cs
 
@@ -115,13 +116,13 @@ Des applications pour C# et Python sont fournies, ainsi qu’un exemple de fichi
     - **C#**  : `dotnet run`
     - **Python** : `python text-analysis.py`
 
-    > **Conseil** : vous pouvez utiliser l’icône **Agrandir le volet** (**^**) dans la barre d’outils du terminal pour mieux voir le texte de la console.
+    > **Conseil** : vous pouvez utiliser l’icône **Agrandir la taille du volet** (**^**) dans la barre d’outils du terminal pour afficher plus de texte sur la console.
 
 9. Observez le résultat pour vérifier si le code s'exécute sans erreur, en affichant le contenu de chaque fichier texte d'avis dans le dossier **Avis**. L’application crée correctement un client pour l’API Analyse de texte, mais ne l’utilise pas. Nous le corrigerons dans la procédure suivante.
 
-## Ajouter du code pour détecter la langue
+## Ajouter du code pour détecter le langage
 
-Maintenant que vous avez créé un client pour l’API, nous allons l’utiliser pour détecter la langue dans laquelle chaque avis est écrit.
+Maintenant que vous avez créé un client pour l’API, nous allons l’utiliser pour détecter la langue dans laquelle chaque avis est rédigé.
 
 1. Dans la fonction **Main** de votre programme, recherchez le commentaire **Obtenir la langue**. Ensuite, sous ce commentaire, ajoutez le code nécessaire pour détecter la langue dans chaque document d’avis :
 
@@ -143,7 +144,7 @@ Maintenant que vous avez créé un client pour l’API, nous allons l’utiliser
 
      > **Remarque** : *Dans cet exemple, chaque avis est analysé individuellement, ce qui entraîne un appel distinct au service pour chaque fichier. Une autre approche consiste à créer une collection de documents et à les transmettre au service en un seul appel. Dans les deux approches, la réponse du service consiste en une collection de documents ; c'est pourquoi dans le code Python ci-dessus, l'index du premier (et seul) document de la réponse ([0]) est spécifié.*
 
-1. Enregistrez vos modifications. Revenez au terminal intégré du dossier **text-analysis**, puis exécutez à nouveau le programme.
+1. Enregistrez vos modifications. Revenez ensuite au terminal intégré du dossier **text-analysis**, puis ré-exécutez le programme.
 1. Observez la sortie, notant que cette fois la langue de chaque avis est identifiée.
 
 ## Ajouter du code pour évaluer le sentiment
@@ -168,10 +169,10 @@ Maintenant que vous avez créé un client pour l’API, nous allons l’utiliser
     print("\nSentiment: {}".format(sentimentAnalysis.sentiment))
     ```
 
-1. Enregistrez vos modifications. Revenez au terminal intégré du dossier **text-analysis**, puis exécutez à nouveau le programme.
+1. Enregistrez vos modifications. Revenez ensuite au terminal intégré du dossier **text-analysis**, puis ré-exécutez le programme.
 1. Observez le résultat pour vérifier la détection d'un sentiment dans les avis.
 
-## Ajouter du code pour identifier les phrases clés
+## Ajouter du code pour identifier les expressions clés
 
 Il peut être utile d’identifier les expressions clés dans un corps de texte pour vous aider à déterminer les sujets principaux qu’il traite.
 
@@ -203,10 +204,10 @@ Il peut être utile d’identifier les expressions clés dans un corps de texte 
             print('\t{}'.format(phrase))
     ```
 
-1. Enregistrez vos modifications. Revenez au terminal intégré du dossier **text-analysis**, puis exécutez à nouveau le programme.
+1. Enregistrez vos modifications. Revenez ensuite au terminal intégré du dossier **text-analysis**, puis ré-exécutez le programme.
 1. Observez la sortie, notant que chaque document contient des expressions clés qui donnent des informations sur l’avis.
 
-## Ajouter du code pour extraire les entités
+## Ajouter du code pour extraire des entités
 
 Souvent, les documents ou d’autres corps de texte mentionnent des personnes, des lieux, des périodes ou d’autres entités. L’API d’analyse de texte peut détecter plusieurs catégories (et sous-catégories) d’entités dans votre texte.
 
@@ -238,10 +239,10 @@ Souvent, les documents ou d’autres corps de texte mentionnent des personnes, d
             print('\t{} ({})'.format(entity.text, entity.category))
     ```
 
-1. Enregistrez vos modifications. Revenez au terminal intégré du dossier **text-analysis**, puis exécutez à nouveau le programme.
+1. Enregistrez vos modifications. Revenez ensuite au terminal intégré du dossier **text-analysis**, puis ré-exécutez le programme.
 1. Observez la sortie, notant les entités détectées dans le texte.
 
-## Ajouter du code pour extraire les entités liées
+## Ajouter du code pour extraire des entités liées
 
 Outre les entités classées, l’API d’analyse de texte peut détecter les entités pour lesquelles il existe des liens connus vers des sources de données, telles que Wikipédia.
 
@@ -273,19 +274,19 @@ Outre les entités classées, l’API d’analyse de texte peut détecter les en
             print('\t{} ({})'.format(linked_entity.name, linked_entity.url))
     ```
 
-1. Enregistrez vos modifications. Revenez au terminal intégré du dossier **text-analysis**, puis exécutez à nouveau le programme.
+1. Enregistrez vos modifications. Revenez ensuite au terminal intégré du dossier **text-analysis**, puis ré-exécutez le programme.
 1. Observez la sortie, en notant les entités liées identifiées.
 
 ## Nettoyer les ressources
 
-Si vous avez fini d’explorer le service Azure AI Language, vous pouvez supprimer les ressources que vous avez créées dans cet exercice. Voici comment procéder :
+Si vous avez fini d’explorer le service Azure AI Language, vous pouvez supprimer les ressources que vous avez créées dans cet exercice. Voici comment procéder :
 
 1. Ouvrez le portail Azure à l’adresse `https://portal.azure.com` et connectez-vous avec le compte Microsoft associé à votre abonnement Azure.
 
-2. Accédez à la ressource Azure AI Language que vous avez créée dans ce labo.
+2. Accédez à la ressource Azure AI Language que vous avez créée dans ce labo.
 
-3. Sur la page des ressources, sélectionnez **Supprimer** et suivez les instructions pour supprimer la ressource.
+3. Dans la page de la ressource, sélectionnez **Supprimer** et suivez les instructions pour supprimer la ressource.
 
 ## Plus d’informations
 
-Pour en savoir plus sur l’utilisation d’**Azure AI Language**, consultez la [documentation](https://learn.microsoft.com/azure/ai-services/language-service/).
+Pour plus d’informations sur l’utilisation d’**Azure AI Language**, consultez la [documentation](https://learn.microsoft.com/azure/ai-services/language-service/).

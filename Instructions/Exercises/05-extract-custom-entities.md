@@ -57,12 +57,12 @@ Vous êtes à présent prêt à créer un projet de reconnaissance d’entités 
 
     - **Azure Directory** : Annuaire Azure contenant votre abonnement.
     - **Abonnement Azure** : Votre abonnement Azure.
-    - **Type de ressource** : Langage.
-    - **Ressource de langage** : Ressource de langage Azure AI que vous avez créée précédemment.
+    - **Type de ressource** : Language.
+    - **Ressource Language** : nom de la ressource Azure AI Language que vous avez créée précédemment.
 
     Si vous n’êtes <u>pas</u> invité à choisir une ressource de langue, c’est peut-être parce que vous avez plusieurs ressources de langue dans votre abonnement, auquel cas :
 
-    1. Dans la barre en haut de la page, sélectionnez le bouton **Paramètres (⚙)**.
+    1. Dans la barre en haut de la page, sélectionnez le bouton **Paramètres (&#9881;)**.
     2. Dans la page **Paramètres**, affichez l’onglet **Ressources**.
     3. Sélectionnez la ressource de langue que vous venez de créer, puis cliquez sur **Changer de ressource**.
     4. En haut de la page, cliquez sur **Language Studio** pour revenir à la page d’accueil de Language Studio.
@@ -138,7 +138,7 @@ Pour tester les fonctionnalités d’extraction d’entités personnalisées du 
 3. Lorsque le référentiel a été cloné, ouvrez le dossier dans Visual Studio Code.
 4. Attendez que des fichiers supplémentaires soient installés pour prendre en charge les projets de code C# dans le référentiel.
 
-    > **Remarque** : Si vous êtes invité à ajouter des ressources requises pour générer et déboguer, sélectionnez **Not Now** (Pas maintenant).
+    > **Remarque** : si vous êtes invité à ajouter des ressources requises pour générer et déboguer, sélectionnez **Not Now** (Pas maintenant).
 
 ## Configuration de votre application
 
@@ -214,7 +214,7 @@ Vous êtes à présent prêt à utiliser le service Azure AI Language pour extr
     ai_client = TextAnalyticsClient(endpoint=ai_endpoint, credential=credential)
     ```
 
-1. Dans la fonction **Main**, notez que le code existant lit tous les fichiers du dossier **articles** et crée une liste indiquant leur contenu. Dans le cas du code C#, la liste des objets **TextDocumentInput** est utilisée pour inclure le nom de fichier en tant qu’ID et la langage. Dans Python, une liste simple du contenu du texte est utilisée.
+1. dans la fonction **Main**, notez que le code existant lit tous les fichiers dans le dossier **publicités** et crée une liste contenant leur contenu. Dans le cas du code C#, la liste des objets **TextDocumentInput** est utilisée pour inclure le nom de fichier en tant qu’ID et la langage. Dans Python, une liste simple du contenu du texte est utilisée.
 1. Recherchez le commentaire **Extraire des entités**, puis ajoutez le code suivant :
 
     **C#** : Program.cs

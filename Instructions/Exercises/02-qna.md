@@ -81,7 +81,7 @@ Votre base de connaissances a été rempli avec des paires de questions et répo
     - **Question** : `What are Microsoft credentials?`
     - **Réponse** : `Microsoft credentials enable you to validate and prove your skills with Microsoft technologies.`
 1. Cliquez sur **Terminé**.
-1. Dans la page de la question **What is Microsoft certification?** (Qu’est-ce que la certification Microsoft ?) créée, développez **Questions alternatives**. Ajoutez ensuite la question alternative `How can I demonstrate my Microsoft technology skills?`.
+1. Dans la page de la question **What are Microsoft credentials?** (Que sont les titres de compétences Microsoft ?) créée, développez **Questions alternatives**. Ajoutez ensuite la question alternative `How can I demonstrate my Microsoft technology skills?`.
 
     Dans certains cas, il est judicieux d’autoriser l’utilisateur à rebondir sur une réponse en créant une invite *multitour* qui lui permet d’affiner de manière itérative la question pour obtenir la réponse dont il a besoin.
 
@@ -119,14 +119,14 @@ La base de connaissances fournit un service de bout en bout que les applications
 
 Vous allez développer votre application de réponse à des questions à l’aide de Visual Studio Code. Les fichiers de code de votre application ont été fournis dans un référentiel GitHub.
 
-> **Conseil** : si vous avez déjà cloné le référentiel **mslearn-ai-language**, ouvrez-le dans Visual Studio Code. Dans le cas contraire, procédez comme suit pour le cloner dans votre environnement de développement.
+> **Conseil** : si vous avez déjà cloné le référentiel **mslearn-ai-language**, ouvrez-le dans Visual Studio Code. Dans le cas contraire, procédez comme suit pour le cloner dans votre environnement de développement.
 
 1. Démarrez Visual Studio Code.
 2. Ouvrez la palette (Maj+CTRL+P) et exécutez une commande **Git : Cloner** pour cloner le référentiel `https://github.com/MicrosoftLearning/mslearn-ai-language` vers un dossier local (peu importe quel dossier).
 3. Lorsque le référentiel a été cloné, ouvrez le dossier dans Visual Studio Code.
 4. Attendez que des fichiers supplémentaires soient installés pour prendre en charge les projets de code C# dans le référentiel.
 
-    > **Remarque** : Si vous êtes invité à ajouter des ressources requises pour générer et déboguer, sélectionnez **Not Now** (Pas maintenant).
+    > **Remarque** : si vous êtes invité à ajouter des ressources requises pour générer et déboguer, sélectionnez **Not Now** (Pas maintenant).
 
 ## Configuration de votre application
 
@@ -253,11 +253,11 @@ Vous pouvez maintenant ajouter le code nécessaire pour importer les bibliothèq
 
 ## Nettoyer les ressources
 
-Si vous avez fini d’explorer le service Azure AI Language, vous pouvez supprimer les ressources que vous avez créées dans cet exercice. Voici comment procéder :
+Si vous avez fini d’explorer le service Azure AI Language, vous pouvez supprimer les ressources que vous avez créées dans cet exercice. Voici comment procéder :
 
 1. Ouvrez le portail Azure à l’adresse `https://portal.azure.com` et connectez-vous avec le compte Microsoft associé à votre abonnement Azure.
-2. Accédez à la ressource Azure AI Language que vous avez créée dans ce labo.
-3. Sur la page des ressources, sélectionnez **Supprimer** et suivez les instructions pour supprimer la ressource.
+2. Accédez à la ressource Azure AI Language que vous avez créée dans ce labo.
+3. Dans la page de la ressource, sélectionnez **Supprimer** et suivez les instructions pour supprimer la ressource.
 
 ## Plus d’informations
 

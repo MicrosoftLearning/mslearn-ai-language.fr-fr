@@ -20,17 +20,17 @@ Ce type d’entrée est un exemple d’*énoncé* (quelque chose qu’un utilisa
 
 ## Configurer une ressource *Azure AI Language*
 
-Si vous n’en avez pas encore, vous devez configurer une ressource pour le **service Azure AI Language** dans votre abonnement Azure.
+Si vous n’avez pas encore de ressource dans votre abonnement, vous devez configurer une ressource du **service Azure AI Language** dans votre abonnement Azure.
 
 1. Ouvrez le portail Azure à l’adresse `https://portal.azure.com` et connectez-vous avec le compte Microsoft associé à votre abonnement Azure.
 1. Recherchez **Services Azure AI** à l’aide du champ disponible dans la partie supérieure. Sélectionnez **Créer** sous **Service Language**.
 1. Sélectionnez **Continuer pour créer votre ressource**.
 1. Configurez la ressource avec les paramètres suivants :
     - **Abonnement** : *votre abonnement Azure*.
-    - **Groupe de ressources** : *sélectionnez ou créez un groupe de ressources*.
+    - **Groupe de ressources** : *créez ou sélectionnez un groupe de ressources*.
     - **Région** : *choisissez n’importe quelle région disponible*.
     - **Nom** : *entrez un nom unique.*
-    - **Niveau tarifaire** : sélectionnez **F0** (*gratuit*). Si cette option n’est pas disponible, sélectionnez **S** (*standard*).
+    - **Niveau tarifaire** : sélectionnez **F0** (*gratuit*) ou **S** (*standard*) si F n’est pas disponible.
     - **Mention sur l’IA responsable** : J’accepte.
 1. Sélectionnez **Revoir + créer**.
 1. Attendez la fin du déploiement, puis accédez à la ressource déployée.
@@ -111,7 +111,7 @@ Maintenant que vous avez ajouté certaines intentions, nous allons entraîner le
 
 1. Dans le volet de gauche, sélectionnez **Travaux d’entraînement**. Ensuite, sélectionnez **+ Démarrer un travail d’entraînement**.
 
-1. Dans la boîte de dialogue **Démarrer un travail d’entraînement**, sélectionnez l’option permettant d’entraîner un nouveau modèle et attribuez-lui le nom « Horloge ». Sélectionnez le mode **Entraînement standard** et utilisez les options par défaut pour la section **Fractionnement des données**.
+1. Dans la boîte de dialogue **Démarrer un travail de formation**, sélectionnez l’option pour former un nouveau modèle et nommez-le `Clock`. Sélectionnez le mode **Entraînement standard** et utilisez les options par défaut pour la section **Fractionnement des données**.
 
 1. Pour commencer le processus d’entraînement de votre modèle, sélectionnez **Entraîner**.
 
@@ -237,7 +237,7 @@ Le service Azure AI Language fournit un ensemble d’entités *prédéfinies* co
 1. Sur la page de l’entité **Date**, dans la section **Apprise** , vérifiez que l’option **Non obligatoire** est sélectionnée. Ensuite, dans la section **Prédéfinie** , sélectionnez **&#65291; Ajouter une nouvelle entité prédéfinie**.
 
 1. Dans la liste **Sélectionner une entité prédéfinie**, sélectionnez **DateTime**, puis **Enregistrer**.
-1. Après avoir ajouté l’entité prédéfinie, revenez à la page **Étiquetage des données**.
+1. Après avoir ajouté l’entité prédéfinie, retournez à la page **d’étiquetage des données**
 1. Sélectionnez l’intention **GetDay** et entrez le nouvel exemple d’énoncé suivant :
 
     `what day was 01/01/1901?`
@@ -296,14 +296,14 @@ Dans un projet réel, vous affineriez de manière itérative les intentions et l
 
 Vous allez développer votre application de compréhension du langage à l’aide de Visual Studio Code. Les fichiers de code de votre application ont été fournis dans un référentiel GitHub.
 
-> **Conseil** : si vous avez déjà cloné le référentiel **mslearn-ai-language**, ouvrez-le dans Visual Studio Code. Dans le cas contraire, procédez comme suit pour le cloner dans votre environnement de développement.
+> **Conseil** : si vous avez déjà cloné le référentiel **mslearn-ai-language**, ouvrez-le dans Visual Studio Code. Dans le cas contraire, procédez comme suit pour le cloner dans votre environnement de développement.
 
 1. Démarrez Visual Studio Code.
 2. Ouvrez la palette (Maj+CTRL+P) et exécutez une commande **Git : Cloner** pour cloner le référentiel `https://github.com/MicrosoftLearning/mslearn-ai-language` vers un dossier local (peu importe quel dossier).
 3. Lorsque le référentiel a été cloné, ouvrez le dossier dans Visual Studio Code.
 4. Attendez que des fichiers supplémentaires soient installés pour prendre en charge les projets de code C# dans le référentiel.
 
-    > **Remarque** : Si vous êtes invité à ajouter des ressources requises pour générer et déboguer, sélectionnez **Not Now** (Pas maintenant).
+    > **Remarque** : si vous êtes invité à ajouter des ressources requises pour générer et déboguer, sélectionnez **Not Now** (Pas maintenant).
 
 ### Configuration de votre application
 
@@ -609,11 +609,11 @@ Vous pouvez maintenant ajouter le code nécessaire pour importer les bibliothèq
 
 ## Nettoyer les ressources
 
-Si vous avez fini d’explorer le service Azure AI Language, vous pouvez supprimer les ressources que vous avez créées dans cet exercice. Voici comment procéder :
+Si vous avez fini d’explorer le service Azure AI Language, vous pouvez supprimer les ressources que vous avez créées dans cet exercice. Voici comment procéder :
 
 1. Ouvrez le portail Azure à l’adresse `https://portal.azure.com` et connectez-vous avec le compte Microsoft associé à votre abonnement Azure.
-2. Accédez à la ressource Azure AI Language que vous avez créée dans ce labo.
-3. Sur la page des ressources, sélectionnez **Supprimer** et suivez les instructions pour supprimer la ressource.
+2. Accédez à la ressource Azure AI Language que vous avez créée dans ce labo.
+3. Dans la page de la ressource, sélectionnez **Supprimer** et suivez les instructions pour supprimer la ressource.
 
 ## Plus d’informations
 

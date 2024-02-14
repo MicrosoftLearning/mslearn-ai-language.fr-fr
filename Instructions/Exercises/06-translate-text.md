@@ -23,20 +23,20 @@ Si vous n’en avez pas encore dans votre abonnement, vous devez configurer une 
     - **Mention sur l’IA responsable** : J’accepte.
 1. Sélectionnez **Revoir + créer**.
 1. Attendez la fin du déploiement, puis accédez à la ressource déployée.
-1. Consultez la page **Clés et points de terminaison**. Plus loin dans l’exercice, vous aurez besoin des informations disponibles sur cette page.
+1. Consultez la page **Clés et points de terminaison**. Vous aurez besoin des informations de cette page plus loin dans l’exercice.
 
 ## Préparer le développement d’une application dans Visual Studio Code
 
 Vous allez développer votre application de traduction de texte à l’aide de Visual Studio Code. Les fichiers de code de votre application ont été fournis dans un référentiel GitHub.
 
-> **Conseil** : si vous avez déjà cloné le référentiel **mslearn-ai-language**, ouvrez-le dans Visual Studio Code. Dans le cas contraire, procédez comme suit pour le cloner dans votre environnement de développement.
+> **Conseil** : si vous avez déjà cloné le référentiel **mslearn-ai-language**, ouvrez-le dans Visual Studio Code. Dans le cas contraire, procédez comme suit pour le cloner dans votre environnement de développement.
 
 1. Démarrez Visual Studio Code.
 2. Ouvrez la palette (Maj+CTRL+P) et exécutez une commande **Git : Cloner** pour cloner le référentiel `https://github.com/MicrosoftLearning/mslearn-ai-language` vers un dossier local (peu importe quel dossier).
 3. Lorsque le référentiel a été cloné, ouvrez le dossier dans Visual Studio Code.
 4. Attendez que des fichiers supplémentaires soient installés pour prendre en charge les projets de code C# dans le référentiel.
 
-    > **Remarque** : Si vous êtes invité à ajouter des ressources requises pour générer et déboguer, sélectionnez **Not Now** (Pas maintenant).
+    > **Remarque** : si vous êtes invité à ajouter des ressources requises pour générer et déboguer, sélectionnez **Not Now** (Pas maintenant).
 
 ## Configuration de votre application
 
@@ -135,7 +135,7 @@ Vous pouvez maintenant utiliser Azure AI Traducteur pour traduire du texte.
         }
         else
         {
-            Console.WriteLine($"({targetLanguage} is not a supported language.");
+            Console.WriteLine($"{targetLanguage} is not a supported language.");
         }
 
     }
@@ -169,7 +169,8 @@ Vous pouvez maintenant utiliser Azure AI Traducteur pour traduire du texte.
     while (inputText.ToLower() != "quit")
     {
         Console.WriteLine("Enter text to translate ('quit' to exit)");
-        inputText = Console.ReadLine();if (inputText.ToLower() != "quit")
+        inputText = Console.ReadLine();
+        if (inputText.ToLower() != "quit")
         {
             Response<IReadOnlyList<TranslatedTextItem>> translationResponse = await client.TranslateAsync(targetLanguage, inputText).ConfigureAwait(false);
             IReadOnlyList<TranslatedTextItem> translations = translationResponse.Value;

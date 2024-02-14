@@ -69,7 +69,7 @@ Vous êtes à présent prêt à créer un projet de reconnaissance d’entités 
 
 1. En haut du portail, dans le menu **Créer**, sélectionnez *Reconnaissance d’entités nommées personnalisées**.
 
-1. Créez un projet avec les paramètres suivants :
+1. Créez un nouveau projet avec les paramètres suivants :
     - **Connecter un stockage** : *cette valeur est probablement déjà remplie. Remplacez la ressource par votre compte de stockage si ce n’est pas le cas*
     - **Informations de base :**
     - **Nom :** `CustomEntityLab`

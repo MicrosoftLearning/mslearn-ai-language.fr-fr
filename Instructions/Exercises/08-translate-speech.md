@@ -23,22 +23,22 @@ Si vous n’en avez pas encore dans votre abonnement, vous devez configurer une 
     - **Nom** : *Entrez un nom unique.*
     - **Niveau tarifaire** : sélectionnez **F0** (*gratuit*). Si cette option n’est pas disponible, sélectionnez **S** (*standard*).
     - **Mention sur l’IA responsable** : J’accepte.
-1. Sélectionnez **Revoir + créer**.
+1. Sélectionnez **Vérifier + créer**, puis **Créer** pour provisionner la ressource.
 1. Attendez la fin du déploiement, puis accédez à la ressource déployée.
-1. Consultez la page **Clés et points de terminaison**. Plus loin dans l’exercice, vous aurez besoin des informations disponibles sur cette page.
+1. Consultez la page **Clés et points de terminaison**. Vous aurez besoin des informations de cette page plus loin dans l’exercice.
 
 ## Préparer le développement d’une application dans Visual Studio Code
 
 Vous allez développer votre application vocale à l’aide de Visual Studio Code. Les fichiers de code de votre application ont été fournis dans un référentiel GitHub.
 
-> **Conseil** : si vous avez déjà cloné le référentiel **mslearn-ai-language**, ouvrez-le dans Visual Studio Code. Dans le cas contraire, procédez comme suit pour le cloner dans votre environnement de développement.
+> **Conseil** : si vous avez déjà cloné le référentiel **mslearn-ai-language**, ouvrez-le dans Visual Studio Code. Dans le cas contraire, procédez comme suit pour le cloner dans votre environnement de développement.
 
 1. Démarrez Visual Studio Code.
 1. Ouvrez la palette (Maj+CTRL+P) et exécutez une commande **Git : Cloner** pour cloner le référentiel `https://github.com/MicrosoftLearning/mslearn-ai-language` vers un dossier local (peu importe quel dossier).
 1. Lorsque le référentiel a été cloné, ouvrez le dossier dans Visual Studio Code.
 1. Attendez que des fichiers supplémentaires soient installés pour prendre en charge les projets de code C# dans le référentiel.
 
-    > **Remarque** : Si vous êtes invité à ajouter des ressources requises pour générer et déboguer, sélectionnez **Not Now** (Pas maintenant).
+    > **Remarque** : si vous êtes invité à ajouter des ressources requises pour générer et déboguer, sélectionnez **Not Now** (Pas maintenant).
 
 ## Configuration de votre application
 
@@ -279,7 +279,7 @@ Maintenant que vous disposez d’un objet **SpeechTranslationConfig** pour le se
     python translator.py
     ```
 
-1. Lorsque vous y êtes invité, entrez un code de langue valide (*fr*, *es* ou *hi*), puis, si vous utilisez un microphone, parlez distinctement et dites « où se trouve la gare ? » ou une autre phrase que vous pourriez utiliser lors d’un voyage à l’étranger. Le programme doit transcrire votre entrée parlée et la traduire dans la langue que vous avez spécifiée (français, espagnol ou hindi). Répétez ce processus, en essayant chaque langue prise en charge par l’application. Lorsque vous avez terminé, appuyez sur ENTRÉE pour terminer le programme.
+1. Lorsque vous y êtes invité, entrez un code de langue valide (*fr*, *es* ou *hi*), puis, si vous utilisez un microphone, parlez distinctement et dites « où se trouve la gare ? » ou une autre phrase que vous pourriez utiliser lors d’un voyage à l’étranger. Le programme doit transcrire votre entrée parlée et la traduire dans la langue que vous avez spécifiée (français, espagnol ou hindi). Répétez ce processus, en essayant chaque langue prise en charge par l’application. Lorsque vous avez terminé, appuyez sur ENTRÉE pour mettre fin au programme.
 
     TranslationRecognizer vous donne environ 5 secondes pour parler. S’il ne détecte aucune entrée parlée, il génère un résultat « Aucune correspondance ». La traduction en hindi peut ne pas toujours être affichée correctement dans la fenêtre Console en raison de problèmes d’encodage de caractères.
 

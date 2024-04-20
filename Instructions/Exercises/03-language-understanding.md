@@ -32,7 +32,7 @@ Si vous n’avez pas encore de ressource dans votre abonnement, vous devez confi
     - **Nom** : *entrez un nom unique.*
     - **Niveau tarifaire** : sélectionnez **F0** (*gratuit*) ou **S** (*standard*) si F n’est pas disponible.
     - **Mention sur l’IA responsable** : J’accepte.
-1. Sélectionnez **Revoir + créer**.
+1. Sélectionnez **Vérifier + créer**, puis **Créer** pour provisionner la ressource.
 1. Attendez la fin du déploiement, puis accédez à la ressource déployée.
 1. Consultez la page **Clés et points de terminaison**. Plus loin dans l’exercice, vous aurez besoin des informations disponibles sur cette page.
 

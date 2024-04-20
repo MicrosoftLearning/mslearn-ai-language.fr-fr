@@ -28,22 +28,22 @@ Si vous n’en avez pas encore dans votre abonnement, vous devez configurer une 
     - **Nom** : *Entrez un nom unique.*
     - **Niveau tarifaire** : sélectionnez **F0** (*gratuit*). Si cette option n’est pas disponible, sélectionnez **S** (*standard*).
     - **Mention sur l’IA responsable** : J’accepte.
-1. Sélectionnez **Revoir + créer**.
+1. Sélectionnez **Vérifier + créer**, puis **Créer** pour provisionner la ressource.
 1. Attendez la fin du déploiement, puis accédez à la ressource déployée.
-1. Consultez la page **Clés et points de terminaison**. Plus loin dans l’exercice, vous aurez besoin des informations disponibles sur cette page.
+1. Consultez la page **Clés et points de terminaison**. Vous aurez besoin des informations de cette page plus loin dans l’exercice.
 
 ## Préparer le développement d’une application dans Visual Studio Code
 
 Vous allez développer votre application vocale à l’aide de Visual Studio Code. Les fichiers de code de votre application ont été fournis dans un référentiel GitHub.
 
-> **Conseil** : si vous avez déjà cloné le référentiel **mslearn-ai-language**, ouvrez-le dans Visual Studio Code. Dans le cas contraire, procédez comme suit pour le cloner dans votre environnement de développement.
+> **Conseil** : si vous avez déjà cloné le référentiel **mslearn-ai-language**, ouvrez-le dans Visual Studio Code. Dans le cas contraire, procédez comme suit pour le cloner dans votre environnement de développement.
 
 1. Démarrez Visual Studio Code.
 1. Ouvrez la palette (Maj+CTRL+P) et exécutez une commande **Git : Cloner** pour cloner le référentiel `https://github.com/MicrosoftLearning/mslearn-ai-language` vers un dossier local (peu importe quel dossier).
 1. Lorsque le référentiel a été cloné, ouvrez le dossier dans Visual Studio Code.
 1. Attendez que des fichiers supplémentaires soient installés pour prendre en charge les projets de code C# dans le référentiel.
 
-    > **Remarque** : Si vous êtes invité à ajouter des ressources requises pour générer et déboguer, sélectionnez **Not Now** (Pas maintenant).
+    > **Remarque** : si vous êtes invité à ajouter des ressources requises pour générer et déboguer, sélectionnez **Not Now** (Pas maintenant).
 
 ## Configuration de votre application
 
@@ -182,7 +182,7 @@ Maintenant que vous disposez d’un objet **SpeechConfig** pour le service de re
     **Python**
 
     ```
-    pip install playsound==1.3.0
+    pip install playsound==1.2.2
     ```
 
 1. Dans le fichier de code de votre programme, sous les importations d’espaces de noms existants, ajoutez le code suivant pour importer la bibliothèque que vous venez d’installer :

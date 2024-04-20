@@ -6,27 +6,27 @@ lab:
 
 # Analyser le texte
 
-**Azure Language** prend en charge l’analyse du texte, notamment la détection de langue, l’analyse des sentiments, l’extraction d’expressions clés et la reconnaissance d’entité.
+**Azure Language** prend en charge l’analyse du texte, notamment la détection de langue, l’analyse des sentiments, l’extraction de phrases clés et la reconnaissance d’entité.
 
-Par exemple, supposons qu’une agence de voyages souhaite traiter les avis d’hôtel soumis au site web de l’entreprise. En utilisant le service Azure AI Language, ils peuvent déterminer la langue dans laquelle chaque révision est écrite, le sentiment (positif, neutre ou négatif) des avis, les expressions clés qui peuvent indiquer les principaux sujets abordés dans l’avis et les entités nommées, telles que les lieux, les repères ou les personnes mentionnées dans les avis.
+Par exemple, supposons qu’une agence de voyages souhaite traiter les avis d’hôtel soumis au site web de l’entreprise. En utilisant Azure AI Language, il est possible de déterminer la langue dans laquelle chaque avis est écrit, le sentiment (positif, neutre ou négatif) des avis, les expressions clés qui peuvent indiquer les principaux sujets abordés dans l’avis et les entités nommées, comme les lieux, les monuments ou les personnes mentionnées dans les avis.
 
 ## Configurer une ressource *Azure AI Language*
 
 Si vous n’avez pas encore de ressource dans votre abonnement, vous devez configurer une ressource du **service Azure AI Language** dans votre abonnement Azure.
 
 1. Ouvrez le portail Azure à l’adresse `https://portal.azure.com` et connectez-vous avec le compte Microsoft associé à votre abonnement Azure.
-1. Recherchez **Azure AI Services** à l’aide du champ de recherche situé en haut. Sélectionnez ensuite **Créer** dans les résultats, sous **Service de langage**.
+1. Recherchez **Services Azure AI** à l’aide du champ disponible dans la partie supérieure. Sélectionnez **Créer** sous **Service Language**.
 1. Sélectionnez **Continuer pour créer votre ressource**.
-1. Provisionnez la ressource à l’aide des paramètres suivants :
+1. Configurez la ressource avec les paramètres suivants :
     - **Abonnement** : *votre abonnement Azure*.
     - **Groupe de ressources** : *créez ou sélectionnez un groupe de ressources*.
-    - **Région** : *choisissez une région disponible*.
+    - **Région** : *choisissez n’importe quelle région disponible*.
     - **Nom** : *entrez un nom unique.*
     - **Niveau tarifaire** : sélectionnez **F0** (*gratuit*) ou **S** (*standard*) si F n’est pas disponible.
     - **Mention sur l’IA responsable** : J’accepte.
-1. Sélectionnez **Revoir + créer**.
+1. Sélectionnez **Vérifier + créer**, puis **Créer** pour provisionner la ressource.
 1. Attendez la fin du déploiement, puis accédez à la ressource déployée.
-1. Affichez la page **Clés et points de terminaison**. Vous aurez besoin des informations de cette page plus loin dans l’exercice.
+1. Consultez la page **Clés et points de terminaison**. Vous aurez besoin des informations de cette page plus loin dans l’exercice.
 
 ## Préparer le développement d’une application dans Visual Studio Code
 
@@ -39,7 +39,7 @@ Vous allez développer votre application d’analyse de texte à l’aide de Vis
 3. Lorsque le référentiel a été cloné, ouvrez le dossier dans Visual Studio Code.
 4. Attendez que des fichiers supplémentaires soient installés pour prendre en charge les projets de code C# dans le référentiel.
 
-    > **Remarque** : Si vous êtes invité à ajouter des ressources requises pour générer et déboguer, sélectionnez **Not Now** (Pas maintenant).
+    > **Remarque** : si vous êtes invité à ajouter des ressources requises pour générer et déboguer, sélectionnez **Not Now** (Pas maintenant).
 
 ## Configuration de votre application
 
@@ -92,7 +92,7 @@ Des applications pour C# et Python sont fournies, ainsi qu’un exemple de fichi
     from azure.ai.textanalytics import TextAnalyticsClient
     ```
 
-7. Dans la fonction **Main**, notez que le code pour charger le point de terminaison et la clé du service Azure AI Language à partir du fichier de configuration a déjà été fourni. Recherchez ensuite le commentaire **Créer un client à l’aide du point de terminaison et de la clé**, puis ajoutez le code suivant pour créer un client pour l’API Analyse de texte :
+7. Dans la fonction **Main**, notez que le code permettant de charger le point de terminaison et la clé du service Azure AI Language à partir du fichier de configuration a déjà été fourni. Recherchez ensuite le commentaire **Créer un client à l’aide du point de terminaison et de la clé**, puis ajoutez le code suivant pour créer un client pour l’API Analyse de texte :
 
     **C#**  : Programs.cs
 
@@ -122,7 +122,7 @@ Des applications pour C# et Python sont fournies, ainsi qu’un exemple de fichi
 
 ## Ajouter du code pour détecter le langage
 
-Maintenant que vous avez créé un client pour l’API, nous allons l’utiliser pour détecter la langue dans laquelle chaque avis est rédigé.
+Maintenant que vous avez créé un client pour l’API, nous allons l’utiliser pour détecter la langue dans laquelle chaque avis est écrit.
 
 1. Dans la fonction **Main** de votre programme, recherchez le commentaire **Obtenir la langue**. Ensuite, sous ce commentaire, ajoutez le code nécessaire pour détecter la langue dans chaque document d’avis :
 
@@ -289,4 +289,4 @@ Si vous avez fini d’explorer le service Azure AI Language, vous pouvez suppr
 
 ## Plus d’informations
 
-Pour plus d’informations sur l’utilisation d’**Azure AI Language**, consultez la [documentation](https://learn.microsoft.com/azure/ai-services/language-service/).
+Pour en savoir plus sur l’utilisation d’**Azure AI Language**, consultez la [documentation](https://learn.microsoft.com/azure/ai-services/language-service/).

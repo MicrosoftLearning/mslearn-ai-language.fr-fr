@@ -15,7 +15,7 @@ Pour tester l’extraction d’entités personnalisées, nous allons créer un m
 Si vous n’en avez pas encore dans votre abonnement, vous devez approvisionner une ressource **Service Azure AI Language**. En outre, utilisez la classification de texte personnalisée. Pour cela, vous devez activer la fonctionnalité **Classification et extraction de texte personnalisées**.
 
 1. Dans un navigateur, ouvrez le portail Azure à l’adresse `https://portal.azure.com`, puis connectez-vous avec votre compte Microsoft.
-1. Sélectionnez le bouton **Créer une ressource**, recherchez *Langage*, puis créez une ressource de **service Azure AI Language**. Quand vous êtes invité à ajouter des *fonctionnalités supplémentaires*, sélectionnez **Classification et extraction de texte personnalisées**. Créez la ressource avec les paramètres suivants :
+1. Sélectionnez le bouton **Créer une ressource**, recherchez *Langage*, puis créez une ressource **Service de langage**. Dans la page pour *Sélectionner des fonctionnalités supplémentaires*, sélectionnez la fonctionnalité personnalisée contenant l’**extraction de la reconnaissance d’entités nommées personnalisées**. Créez la ressource avec les paramètres suivants :
     - **Abonnement** : *votre abonnement Azure*
     - **Groupe de ressources** : *sélectionnez ou créez un groupe de ressources*.
     - **Région** : *choisissez n’importe quelle région disponible*
@@ -62,12 +62,12 @@ Vous êtes à présent prêt à créer un projet de reconnaissance d’entités 
 
     Si vous n’êtes <u>pas</u> invité à choisir une ressource de langue, c’est peut-être parce que vous avez plusieurs ressources de langue dans votre abonnement, auquel cas :
 
-    1. Dans la barre en haut de la page, sélectionnez le bouton **Paramètres (&#9881;)**.
+    1. Dans la barre supérieure de la page, sélectionnez le bouton **Paramètres (&#9881;)**.
     2. Dans la page **Paramètres**, affichez l’onglet **Ressources**.
     3. Sélectionnez la ressource de langue que vous venez de créer, puis cliquez sur **Changer de ressource**.
     4. En haut de la page, cliquez sur **Language Studio** pour revenir à la page d’accueil de Language Studio.
 
-1. En haut du portail, dans le menu **Créer**, sélectionnez *Reconnaissance d’entités nommées personnalisées**.
+1. En haut du portail, dans le menu **Créer**, sélectionnez **Reconnaissance d’entités nommées personnalisées**.
 
 1. Créez un nouveau projet avec les paramètres suivants :
     - **Connecter un stockage** : *cette valeur est probablement déjà remplie. Remplacez la ressource par votre compte de stockage si ce n’est pas le cas*
@@ -142,7 +142,7 @@ Pour tester les fonctionnalités d’extraction d’entités personnalisées du 
 
 ## Configuration de votre application
 
-Des applications pour C# et Python sont fournies, ainsi qu’un exemple de fichier texte que vous utiliserez pour tester le résumé. Les deux applications présentent les mêmes fonctionnalités. Vous allez commencer par effectuer certaines parties clés de l’application pour lui permettre d’utiliser votre ressource Azure AI Language.
+Des applications pour C# et Python sont fournies. Les deux applications présentent les mêmes fonctionnalités. Vous allez commencer par effectuer certaines parties clés de l’application pour lui permettre d’utiliser votre ressource Azure AI Language.
 
 1. Dans Visual Studio Code, dans le **volet Explorateur**, accédez au dossier **Labfiles/05-custom-entity-recognition**, puis développez le dossier **CSharp** ou **Python** en fonction de votre préférence de langage, ainsi que le dossier **custom-entities** qu’il contient. Chaque dossier contient les fichiers propres au langage d’une application dans laquelle vous allez intégrer la fonctionnalité de classification de texte Azure AI Language.
 1. Cliquez avec le bouton droit de la souris sur le dossier **custom-entities** qui contient vos fichiers de code, puis ouvrez un terminal intégré. Installez ensuite le package SDK Analyse de texte d’Azure AI Language en exécutant la commande appropriée pour votre préférence de langage :
@@ -164,7 +164,7 @@ Des applications pour C# et Python sont fournies, ainsi qu’un exemple de fichi
     - **C#** : appsettings.json
     - **Python** : .env
     
-1. Mettez à jour les valeurs de configuration pour inclure le **point de terminaison** et une **clé** de la ressource Azure Language que vous avez créée (disponible sur la page **Clés et point de terminaison** de votre ressource Azure AI Language dans le portail Azure). Le fichier doit déjà contenir les noms de projet et de déploiement de votre modèle d’extraction d’entités personnalisées.
+1. Mettez à jour les valeurs de configuration de sorte à inclure un **point de terminaison** et une **clé** de la ressource Azure Language que vous avez créée (disponible sur la page **Clés et point de terminaison** de votre ressource Azure AI Language dans le Portail Azure). Le fichier doit déjà contenir les noms du projet et du déploiement de votre modèle personnalisé d’extraction d’entités.
 1. Enregistrez le fichier de configuration.
 
 ## Ajouter du code pour extraire des entités
@@ -214,7 +214,7 @@ Vous êtes à présent prêt à utiliser le service Azure AI Language pour extr
     ai_client = TextAnalyticsClient(endpoint=ai_endpoint, credential=credential)
     ```
 
-1. dans la fonction **Main**, notez que le code existant lit tous les fichiers dans le dossier **publicités** et crée une liste contenant leur contenu. Dans le cas du code C#, la liste des objets **TextDocumentInput** est utilisée pour inclure le nom de fichier en tant qu’ID et la langage. Dans Python, une liste simple du contenu du texte est utilisée.
+1. Dans la fonction **Main**, notez que le code existant lit tous les fichiers du dossier **ads** et crée une liste de leur contenu. Dans le cas du code C#, une liste des objets **TextDocumentInput** est utilisée pour inclure le nom de fichier en tant qu’ID, ainsi que la langue. Dans Python, une liste simple du contenu du texte est utilisée.
 1. Recherchez le commentaire **Extraire des entités**, puis ajoutez le code suivant :
 
     **C#** : Program.cs
@@ -288,9 +288,9 @@ Vous êtes à présent prêt à utiliser le service Azure AI Language pour extr
 
 ## Tester votre application
 
-Votre application est à présent prête à être testée.
+Votre application est maintenant prête à être testée.
 
-1. Dans le terminal intégré pour le dossier **classify-text**, entrez la commande suivante pour exécuter le programme :
+1. Dans le terminal intégré du dossier **classify-text**, entrez la commande suivante pour exécuter le programme :
 
     - **C#**  : `dotnet run`
     - **Python** : `python custom-entities.py`

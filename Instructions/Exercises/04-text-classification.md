@@ -12,7 +12,7 @@ Pour tester la classification de texte personnalisée du service Azure AI Langua
 
 ## Configurer une ressource *Azure AI Language*
 
-Si vous n’en avez pas encore dans votre abonnement, vous devez configurer une ressource pour le **service Azure AI Language**. En outre, pour utiliser la classification de texte personnalisée, vous devez activer la fonctionnalité **Classification et extraction de texte personnalisée**.
+Si vous n’en avez pas encore dans votre abonnement, vous devez approvisionner une ressource **Service Azure AI Language**. En outre, utilisez la classification de texte personnalisée. Pour cela, vous devez activer la fonctionnalité **Classification et extraction de texte personnalisées**.
 
 1. Dans un navigateur, ouvrez le Portail Azure (`https://portal.azure.com`) et connectez-vous avec votre compte Microsoft.
 1. Sélectionnez le champ de recherche en haut du Portail, recherchez `Azure AI services` et créez une ressource **Language Service**.
@@ -42,7 +42,7 @@ Une fois que vous avez créé le service et le compte de stockage Azure AI Langu
 
 1. Dans votre compte de stockage, sélectionnez **Configuration** sous les **Paramètres**. Dans l’écran de configuration, activez l’option **Autoriser l’accès anonyme aux objets blob**, puis sélectionnez **Enregistrer**.
 
-1. Sélectionnez **Conteneurs** dans le menu de gauche, situé sous **Stockage de données**. Dans l’écran qui s’affiche, sélectionnez **+ Conteneur**. Donnez au conteneur le nom `articles`, et définissez le **Niveau d’accès anonyme** sur **Conteneur (accès en lecture anonyme pour les conteneurs et les objets blob)**.
+1. Sélectionnez **Conteneurs** dans le menu de gauche, situé sous **Stockage de données**. Dans l’écran qui s’affiche, sélectionnez **+ Conteneur**. Donnez au conteneur le nom `articles`, puis définissez le **niveau d’accès anonyme** sur **Conteneur (accès en lecture anonyme pour les conteneurs et les objets blob)**.
 
     > **REMARQUE** : lorsque vous configurez un compte de stockage pour une solution réelle, veillez à attribuer le niveau d’accès approprié. Pour en savoir plus sur chaque niveau d’accès, consultez la [documentation de Stockage Azure](https://learn.microsoft.com/azure/storage/blobs/anonymous-read-access-configure).
 
@@ -136,7 +136,7 @@ Dans les applications réelles de classification de texte, il est important d’
 1. Sélectionnez **Performances du modèle**, puis votre modèle **ClassifierArticles**. Ici, vous pouvez voir le scoring de votre modèle, ses métriques de performances et quand il a été entraîné. Si le score de votre modèle n’est pas de 100 %, cela signifie que l’un des documents utilisés pour les tests n’a pas été évalué correctement par rapport à son étiquette initiale. Ces échecs vous aident à comprendre ce qu’il faut améliorer.
 1. Sélectionnez l’onglet **Détails du jeu de test**. En cas d’erreurs, cet onglet vous permet de voir les articles que vous avez indiqués pour les tests, sous quelle étiquette le modèle les a prédits et si cela entre en conflit avec leur étiquette de test. Par défaut, l’onglet affiche uniquement les prédictions incorrectes. Vous pouvez activer/désactiver l’option **Afficher les non-correspondances uniquement** pour voir tous les articles que vous avez indiqués pour les tests et sous quelle étiquette chacun d’eux a été prédit.
 
-## Déployer un modèle
+## Déployer votre modèle
 
 Une fois que vous êtes satisfait de l’entraînement de votre modèle, vous pouvez le déployer, pour ensuite commencer à classifier du texte avec l’API.
 
@@ -156,7 +156,7 @@ Pour tester les fonctionnalités de classification de texte personnalisée du se
 3. Lorsque le référentiel a été cloné, ouvrez le dossier dans Visual Studio Code.
 4. Attendez que des fichiers supplémentaires soient installés pour prendre en charge les projets de code C# dans le référentiel.
 
-    > **Remarque** : Si vous êtes invité à ajouter des ressources requises pour générer et déboguer, sélectionnez **Not Now** (Pas maintenant).
+    > **Remarque** : si vous êtes invité à ajouter des ressources requises pour générer et déboguer, sélectionnez **Not Now** (Pas maintenant).
 
 ## Configuration de votre application
 
@@ -297,14 +297,14 @@ Vous pouvez maintenant utiliser le service Azure AI Language pour classifier des
 
 ## Tester votre application
 
-Votre application est maintenant prête à être testée.
+Votre application est à présent prête à être testée.
 
-1. Revenez au terminal intégré du dossier **classify-text**, puis entrez la commande suivante pour exécuter le programme :
+1. Dans le terminal intégré pour le dossier **classify-text**, entrez la commande suivante pour exécuter le programme :
 
     - **C#**  : `dotnet run`
     - **Python** : `python classify-text.py`
 
-    > **Conseil** : vous pouvez utiliser l’icône **Agrandir le volet** (**^**) dans la barre d’outils du terminal pour mieux voir le texte de la console.
+    > **Conseil** : vous pouvez utiliser l’icône **Agrandir la taille du volet** (**^**) dans la barre d’outils du terminal pour afficher plus de texte de la console.
 
 1. Observez la sortie. L’application doit indiquer une classification et un score de confiance pour chaque fichier texte.
 

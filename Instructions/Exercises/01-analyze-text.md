@@ -45,8 +45,8 @@ Vous allez développer votre application d’analyse de texte à l’aide de Vis
 
 Des applications pour C# et Python sont fournies, ainsi qu’un exemple de fichier texte que vous utiliserez pour tester le résumé. Les deux applications présentent les mêmes fonctionnalités. Pour commencer, vous allez définir certaines parties clés de l’application pour lui permettre d’utiliser votre ressource Azure AI Language.
 
-1. Dans Visual Studio Code, dans le volet **Explorateur**, accédez au dossier **Labfiles/01-analyze-text** et développez le dossier **CSharp** ou **Python** selon vos préférencesde language, ainsi que le dossier **text-analytics** qu’il contient. Chaque dossier contient les fichiers spécifiques au langage d’application où vous allez intégrer la fonctionnalité d’analyse de texte d’Azure AI Language.
-2. Cliquez avec le bouton droit sur le dossier **text-analytics** contenant vos fichiers de code et ouvrez un terminal intégré. Ensuite, installez le package SDK d’analyse de texte d’Azure AI Language en exécutant la commande correspondante du langage choisi. Si vous avez choisi Python, installez également le package `dotenv` :
+1. Dans Visual Studio Code, dans le volet **Explorateur**, accédez au dossier **Labfiles/01-analyze-text** et développez le dossier **CSharp** ou **Python** en fonction de votre préférence de langage et le dossier **text-analysis** qu’il contient. Chaque dossier contient les fichiers spécifiques au langage d’application où vous allez intégrer la fonctionnalité d’analyse de texte d’Azure AI Language.
+2. Cliquez avec le bouton droit sur le dossier **text-analysis** contenant vos fichiers de code, puis ouvrez un terminal intégré. Ensuite, installez le package SDK d’analyse de texte d’Azure AI Language en exécutant la commande correspondante du langage choisi. Si vous avez choisi Python, installez également le package `dotenv` :
 
     **C# :**
 
@@ -61,7 +61,7 @@ Des applications pour C# et Python sont fournies, ainsi qu’un exemple de fichi
     pip install python-dotenv
     ```
 
-3. Dans le volet **Explorateur**, dans le dossier **text-analytics**, ouvrez le fichier config correspondant au langage choisi.
+3. Dans le volet **Explorateur**, dans le dossier **text-analysis**, ouvrez le fichier de configuration pour le langage de votre choix
 
     - **C#** : appsettings.json
     - **Python** : .env

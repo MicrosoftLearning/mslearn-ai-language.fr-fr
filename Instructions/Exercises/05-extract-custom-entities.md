@@ -95,7 +95,7 @@ Maintenant que votre projet est créé, vous devez étiqueter vos données pour 
     1. Mettez en surbrillance le texte *Denver, CO*, puis sélectionnez l’entité **Location**.
     1. Mettez en surbrillance le texte *$90*, puis sélectionnez l’entité **Price**.
 1. Dans le volet **Activité**, notez que ce document sera ajouté au jeu de données pour l’apprentissage du modèle.
-1. Utilisez le bouton **Document suivant** pour passer au document suivant, puis continuez à attribuer du texte aux entités appropriées pour l’ensemble des documents, en les ajoutant tous au jeu de données d’apprentissage.
+1. Utilisez le bouton **Document suivant** pour passer au document suivant et continuer à attribuer du texte aux entités appropriées pour l’ensemble des documents, en les ajoutant tous au jeu de données de formation.
 1. Lorsque vous avez étiqueté le dernier document (*Ad 9.txt*), enregistrez les étiquettes.
 
 ## Entraîner votre modèle

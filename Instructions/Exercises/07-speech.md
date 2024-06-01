@@ -28,7 +28,7 @@ Si vous n’en avez pas encore dans votre abonnement, vous devez configurer une 
     - **Nom** : *Entrez un nom unique.*
     - **Niveau tarifaire** : sélectionnez **F0** (*gratuit*). Si cette option n’est pas disponible, sélectionnez **S** (*standard*).
     - **Mention sur l’IA responsable** : J’accepte.
-1. Sélectionnez **Revoir + créer**.
+1. Sélectionnez **Vérifier + créer**, puis **Créer** pour provisionner la ressource.
 1. Attendez la fin du déploiement, puis accédez à la ressource déployée.
 1. Consultez la page **Clés et points de terminaison**. Vous aurez besoin des informations de cette page plus loin dans l’exercice.
 
@@ -41,6 +41,9 @@ Vous allez développer votre application vocale à l’aide de Visual Studio Cod
 1. Démarrez Visual Studio Code.
 1. Ouvrez la palette (Maj+CTRL+P) et exécutez une commande **Git : Cloner** pour cloner le référentiel `https://github.com/MicrosoftLearning/mslearn-ai-language` vers un dossier local (peu importe quel dossier).
 1. Lorsque le référentiel a été cloné, ouvrez le dossier dans Visual Studio Code.
+
+    > **Remarque** : Si Visual Studio Code affiche un message contextuel qui vous invite à approuver le code que vous ouvrez, cliquez sur l’option **Oui, je fais confiance aux auteurs** dans la fenêtre contextuelle.
+
 1. Attendez que des fichiers supplémentaires soient installés pour prendre en charge les projets de code C# dans le référentiel.
 
     > **Remarque** : si vous êtes invité à ajouter des ressources requises pour générer et déboguer, sélectionnez **Not Now** (Pas maintenant).

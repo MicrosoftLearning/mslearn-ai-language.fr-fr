@@ -37,6 +37,9 @@ Vous allez développer votre application d’analyse de texte à l’aide de Vis
 1. Démarrez Visual Studio Code.
 2. Ouvrez la palette (Maj+CTRL+P) et exécutez une commande **Git : Cloner** pour cloner le référentiel `https://github.com/MicrosoftLearning/mslearn-ai-language` vers un dossier local (peu importe quel dossier).
 3. Lorsque le référentiel a été cloné, ouvrez le dossier dans Visual Studio Code.
+
+    > **Remarque** : Si Visual Studio Code affiche un message contextuel qui vous invite à approuver le code que vous ouvrez, cliquez sur l’option **Oui, je fais confiance aux auteurs** dans la fenêtre contextuelle.
+
 4. Attendez que des fichiers supplémentaires soient installés pour prendre en charge les projets de code C# dans le référentiel.
 
     > **Remarque** : si vous êtes invité à ajouter des ressources requises pour générer et déboguer, sélectionnez **Not Now** (Pas maintenant).
@@ -45,8 +48,8 @@ Vous allez développer votre application d’analyse de texte à l’aide de Vis
 
 Des applications pour C# et Python sont fournies, ainsi qu’un exemple de fichier texte que vous utiliserez pour tester le résumé. Les deux applications présentent les mêmes fonctionnalités. Pour commencer, vous allez définir certaines parties clés de l’application pour lui permettre d’utiliser votre ressource Azure AI Language.
 
-1. Dans Visual Studio Code, dans le volet **Explorateur**, accédez au dossier **Labfiles/01-analyze-text** et développez le dossier **CSharp** ou **Python** selon vos préférencesde language, ainsi que le dossier **text-analytics** qu’il contient. Chaque dossier contient les fichiers spécifiques au langage d’application où vous allez intégrer la fonctionnalité d’analyse de texte d’Azure AI Language.
-2. Cliquez avec le bouton droit sur le dossier **text-analytics** contenant vos fichiers de code et ouvrez un terminal intégré. Ensuite, installez le package SDK d’analyse de texte d’Azure AI Language en exécutant la commande correspondante du langage choisi. Si vous avez choisi Python, installez également le package `dotenv` :
+1. Dans Visual Studio Code, dans le volet **Explorateur**, accédez au dossier **Labfiles/01-analyze-text** et développez le dossier **CSharp** ou **Python** en fonction de votre préférence de langage et le dossier **text-analysis** qu’il contient. Chaque dossier contient les fichiers spécifiques au langage d’application où vous allez intégrer la fonctionnalité d’analyse de texte d’Azure AI Language.
+2. Cliquez avec le bouton droit sur le dossier **text-analysis** contenant vos fichiers de code, puis ouvrez un terminal intégré. Ensuite, installez le package SDK d’analyse de texte d’Azure AI Language en exécutant la commande correspondante du langage choisi. Si vous avez choisi Python, installez également le package `dotenv` :
 
     **C# :**
 
@@ -61,7 +64,7 @@ Des applications pour C# et Python sont fournies, ainsi qu’un exemple de fichi
     pip install python-dotenv
     ```
 
-3. Dans le volet **Explorateur**, dans le dossier **text-analytics**, ouvrez le fichier config correspondant au langage choisi.
+3. Dans le volet **Explorateur**, dans le dossier **text-analysis**, ouvrez le fichier de configuration pour le langage de votre choix
 
     - **C#** : appsettings.json
     - **Python** : .env

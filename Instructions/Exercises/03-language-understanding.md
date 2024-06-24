@@ -119,7 +119,7 @@ Maintenant que vous avez ajouté certaines intentions, nous allons entraîner le
 
 1. Sélectionnez la page **Performances du modèle**, puis sélectionnez le modèle **Clock**. Passez en revue les métriques d’évaluation globales et par intention (*précision*, *rappel* et *score F1*) et la *matrice de confusion* générée par l’évaluation effectuée lors de l’entraînement (notez qu’en raison du petit nombre d’exemples d’énoncés, toutes les intentions ne peuvent pas être incluses dans les résultats).
 
-    > **REMARQUE** : pour en savoir plus sur les métriques d’évaluation, consultez la [documentation](/azure/ai-services/language-service/conversational-language-understanding/concepts/evaluation-metrics).
+    > **REMARQUE** : pour en savoir plus sur les métriques d’évaluation, consultez la [documentation](https://learn.microsoft.com/azure/ai-services/language-service/conversational-language-understanding/concepts/evaluation-metrics).
 
 1. Accédez à la page **Déploiement d’un modèle**, puis sélectionnez **Ajouter un déploiement**.
 

@@ -51,7 +51,7 @@ Maintenant que vous avez créé une ressource de création, vous pouvez l’util
 
     Si vous n’êtes <u>pas</u> invité à choisir une ressource de langue, c’est peut-être parce que vous avez plusieurs ressources de langue dans votre abonnement, auquel cas :
 
-    1. Dans la barre en haut de la page, sélectionnez le bouton **Paramètres (&#9881;)**.
+    1. Dans la barre supérieure de la page, sélectionnez le bouton **Paramètres (&#9881;)**.
     2. Dans la page **Paramètres**, affichez l’onglet **Ressources**.
     3. Sélectionnez la ressource de langue que vous venez de créer, puis cliquez sur **Changer de ressource**.
     4. En haut de la page, cliquez sur **Language Studio** pour revenir à la page d’accueil de Language Studio.

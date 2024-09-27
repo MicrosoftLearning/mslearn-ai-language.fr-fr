@@ -15,7 +15,8 @@ Par exemple, supposons qu’une agence de voyages souhaite traiter les avis d’
 Si vous n’avez pas encore de ressource dans votre abonnement, vous devez configurer une ressource du **service Azure AI Language** dans votre abonnement Azure.
 
 1. Ouvrez le portail Azure à l’adresse `https://portal.azure.com` et connectez-vous avec le compte Microsoft associé à votre abonnement Azure.
-1. Recherchez **Services Azure AI** à l’aide du champ disponible dans la partie supérieure. Sélectionnez **Créer** sous **Service Language**.
+1. Sélectionnez **Créer une ressource**.
+1. Dans le champ de recherche, recherchez le **service de language**. Sélectionnez **Créer** sous **Service Language**.
 1. Sélectionnez **Continuer pour créer votre ressource**.
 1. Configurez la ressource avec les paramètres suivants :
     - **Abonnement** : *votre abonnement Azure*.
@@ -26,7 +27,7 @@ Si vous n’avez pas encore de ressource dans votre abonnement, vous devez confi
     - **Mention sur l’IA responsable** : J’accepte.
 1. Sélectionnez **Vérifier + créer**, puis **Créer** pour provisionner la ressource.
 1. Attendez la fin du déploiement, puis accédez à la ressource déployée.
-1. Consultez la page **Clés et points de terminaison**. Vous aurez besoin des informations de cette page plus loin dans l’exercice.
+1. Affichez la page **Point de terminaison et clés** dans la section **Gestion des ressources**. Vous aurez besoin des informations de cette page plus loin dans l’exercice.
 
 ## Préparer le développement d’une application dans Visual Studio Code
 

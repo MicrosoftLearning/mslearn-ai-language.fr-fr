@@ -15,9 +15,9 @@ L’un des scénarios conversationnels les plus courants consiste à fournir une
 Si vous n’en avez pas encore dans votre abonnement, vous devez configurer une ressource pour le **service Azure AI Language**. En outre, pour créer et héberger une base de connaissances pour répondre à des questions, vous devez activer la fonctionnalité **Réponses aux questions**.
 
 1. Ouvrez le portail Azure à l’adresse `https://portal.azure.com` et connectez-vous avec le compte Microsoft associé à votre abonnement Azure.
-1. Dans le champ de recherche disponible dans la partie supérieure, entrez **services Azure AI**, puis appuyez sur **Entrée**.
-1. Dans les résultats, sélectionnez **Créer** sous la ressource **Service de langage**.
-1. **Sélectionnez** le bloc **Réponses aux questions personnalisées**. Sélectionnez ensuite **Continuer pour créer votre ressource**. Vous devez entrer les paramètres suivants :
+1. Sélectionnez **Créer une ressource**.
+1. Dans le champ de recherche, recherchez le **service de language**. Sélectionnez **Créer** sous **Service Language**.
+1. Sélectionnez le bloc **Réponses aux questions personnalisées**. Sélectionnez ensuite **Continuer pour créer votre ressource**. Vous devez entrer les paramètres suivants :
 
     - **Abonnement** : *votre abonnement Azure*
     - **Groupe de ressources** : *sélectionnez ou créez un groupe de ressources*.
@@ -54,7 +54,7 @@ Pour créer une base de connaissances permettant de répondre aux questions dans
     4. En haut de la page, cliquez sur **Language Studio** pour revenir à la page d’accueil de Language Studio.
 
 1. En haut du portail, dans le menu **Créer**, sélectionnez **Réponses aux questions personnalisées**.
-1. Dans l’assistant **Créer un projet**, sur la page **Choisir un paramètre de langue**, sélectionnez l’option **Définir la langue de tous les projets de cette ressource**, puis sélectionnez **Anglais**. Sélectionnez ensuite **Suivant**.
+1. Dans l’assistant ***Créer un projet**, sur la page **Choisir un paramètre de langue**, sélectionnez l’option **Sélectionner la langue de tous les projets de cette ressource**, puis sélectionnez **Anglais** comme langue. Sélectionnez ensuite **Suivant**.
 1. Sur la page **Entrer les informations de base**, entrez les informations suivantes :
     - **Nom** `LearnFAQ`
     - **Description** : `FAQ for Microsoft Learn`
@@ -64,7 +64,7 @@ Pour créer une base de connaissances permettant de répondre aux questions dans
 
 ## Ajouter des sources à la base de connaissances
 
-Vous pouvez créer une base de connaissances à partir de zéro, mais il est courant de commencer par importer les questions et les réponses d'une page ou d'un document de FAQ existant. Dans ce cas, vous allez importer des données à partir d’une page web de FAQ existante pour Microsoft Learn, et vous importerez également certaines questions et réponses prédéfinies de type « chit-chat » pour prendre en charge les échanges conversationnels courants.
+Vous pouvez créer une base de connaissances à partir de zéro, mais il est courant de commencer par importer les questions et les réponses d'une page ou d'un document de FAQ existant. Dans ce cas, vous allez importer des données à partir d’une page web de FAQ existante pour Microsoft Learn, et vous importerez également certaines questions et réponses prédéfinies de type « chit-chat » pour prendre en charge les échanges conversationnels courants.
 
 1. Dans la page **Gérer les sources** de votre projet de réponse aux questions, dans la liste **&#9547; Ajouter une source**, sélectionnez **URL**. Ensuite, dans la boîte de dialogue **Ajouter des URL**, cliquez sur **&#9547; Ajouter une URL** et définissez le nom et l’URL suivants, puis sélectionnez **Ajouter tout** pour l’ajouter à la base de connaissances :
     - **Nom :** `Learn FAQ Page`
@@ -108,7 +108,7 @@ Maintenant que vous avez une base de connaissances, vous pouvez la tester dans l
 
 La base de connaissances fournit un service de bout en bout que les applications clientes peuvent utiliser pour répondre aux questions. Vous êtes maintenant prêt à publier votre base de connaissances et à accéder à son interface REST à partir d’un client.
 
-1. Dans le projet **LearnFAQ** dans Language Studio, sélectionnez la page **Déployer base de connaissances**.
+1. Dans le projet **LearnFAQ** dans Language Studio, sélectionnez la page **Déployer la base de connaissances** dans le menu de navigation situé à gauche.
 1. En haut de la page, sélectionnez **Déployer**. Sélectionnez ensuite **Déployer** pour confirmer que vous souhaitez déployer la base de connaissances.
 1. Une fois le déploiement terminé, sélectionnez **Obtenir l’URL de prédiction** pour afficher le point de terminaison REST de votre base de connaissances et notez que l’exemple de requête inclut des paramètres pour les éléments suivants :
     - **projectName** : nom de votre projet (qui doit être *LearnFAQ*)

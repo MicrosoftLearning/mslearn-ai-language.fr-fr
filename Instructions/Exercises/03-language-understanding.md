@@ -91,6 +91,8 @@ Pour aider le modèle à prédire l’intention demandée par un utilisateur, vo
     - `what time is it?`
     - `tell me the time`
 
+    > **REMARQUE** Pour ajouter un nouvel énoncé, écrivez l’énoncé dans la zone de texte en regard de l’intention, puis appuyez sur Entrée. 
+
 1. Sélectionnez l’intention **GetDay** et ajoutez les énoncés suivants comme exemples d’entrée utilisateur :
     - `what day is it?`
     - `what's the day?`
@@ -193,6 +195,8 @@ Dans certains cas, les valeurs valides pour une entité peuvent être limitées 
     | Clé de liste | Synonymes|
     |-------------------|---------|
     | `Sunday` | `Sun` |
+
+    > **REMARQUE** : pour saisir les champs de la nouvelle liste, insérez la valeur `Sunday` dans le champ de texte, puis cliquez sur le champ où « Tapez la valeur et appuyez sur Entrée... » s’affiche, entrez les synonymes, puis appuyez sur Entrée.
 
 1. Répétez l’étape précédente pour ajouter les composants de liste suivants :
 

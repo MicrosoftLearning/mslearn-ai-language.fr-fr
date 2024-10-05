@@ -80,6 +80,8 @@ Vous êtes à présent prêt à créer un projet de reconnaissance d’entités 
         - **Conteneur de magasin d’objets blob** : petites annonces
         - **Vos fichiers sont-ils étiquetés avec des classes ?**  : Non, je dois étiqueter mes fichiers dans le cadre de ce projet
 
+> **Conseil** : si vous obtenez un message d’erreur indiquant que vous n’êtes pas autorisé à effectuer cette opération, vous devez ajouter une attribution de rôle. Pour résoudre ce problème, le rôle « Contributeur aux données Blob du stockage » est ajouté au compte de stockage de l’utilisateur qui exécute le labo. Pour davantage de précisions, référez-vous à la [page de documentation.](https://learn.microsoft.com/azure/ai-services/language-service/custom-named-entity-recognition/how-to/create-project?tabs=portal%2Clanguage-studio#enable-identity-management-for-your-resource).
+
 ## Étiqueter vos données
 
 Maintenant que votre projet est créé, vous devez étiqueter vos données pour entraîner votre modèle à identifier des entités.

@@ -20,7 +20,18 @@ Si vous n’en avez pas encore dans votre abonnement, vous devez approvisionner 
 1. Créez une ressource avec les paramètres suivants :
     - **Abonnement** : *votre abonnement Azure*.
     - **Groupe de ressources** : *sélectionnez ou créez un groupe de ressources*.
-    - **Région** : *choisissez n’importe quelle région disponible* :
+    - **Région** : *choisissez parmi l’une des régions suivantes :*\*
+        - Australie Est
+        - Inde centrale
+        - USA Est
+        - USA Est 2
+        - Europe Nord
+        - États-Unis - partie centrale méridionale
+        - Suisse Nord
+        - Sud du Royaume-Uni
+        - Europe Ouest
+        - USA Ouest 2
+        - USA Ouest 3
     - **Nom** : *entrez un nom unique.*
     - **Niveau tarifaire** : sélectionnez **F0** (*gratuit*). Si cette option n’est pas disponible, sélectionnez **S** (*standard*).
     - **Compte de stockage** : nouveau compte de stockage

@@ -28,7 +28,19 @@ Si vous n’avez pas encore de ressource dans votre abonnement, vous devez confi
 1. Configurez la ressource avec les paramètres suivants :
     - **Abonnement** : *votre abonnement Azure*.
     - **Groupe de ressources** : *créez ou sélectionnez un groupe de ressources*.
-    - **Région** : *choisissez n’importe quelle région disponible*.
+    - **Région** : *choisissez parmi l’une des régions suivantes :*\*
+        - Australie Est
+        - Inde centrale
+        - Chine orientale 2
+        - USA Est
+        - USA Est 2
+        - Europe Nord
+        - États-Unis - partie centrale méridionale
+        - Suisse Nord
+        - Sud du Royaume-Uni
+        - Europe Ouest
+        - USA Ouest 2
+        - USA Ouest 3
     - **Nom** : *entrez un nom unique.*
     - **Niveau tarifaire** : sélectionnez **F0** (*gratuit*) ou **S** (*standard*) si F n’est pas disponible.
     - **Mention sur l’IA responsable** : J’accepte.

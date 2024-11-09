@@ -18,7 +18,18 @@ Si vous n’en avez pas encore dans votre abonnement, vous devez approvisionner 
 1. Sélectionnez le bouton **Créer une ressource**, recherchez *Langage*, puis créez une ressource **Service de langage**. Dans la page pour *Sélectionner des fonctionnalités supplémentaires*, sélectionnez la fonctionnalité personnalisée contenant l’**extraction de la reconnaissance d’entités nommées personnalisées**. Créez la ressource avec les paramètres suivants :
     - **Abonnement** : *votre abonnement Azure*
     - **Groupe de ressources** : *sélectionnez ou créez un groupe de ressources*.
-    - **Région** : *choisissez n’importe quelle région disponible*
+    - **Région** : *choisissez parmi l’une des régions suivantes :*\*
+        - Australie Est
+        - Inde centrale
+        - USA Est
+        - USA Est 2
+        - Europe Nord
+        - États-Unis - partie centrale méridionale
+        - Suisse Nord
+        - Sud du Royaume-Uni
+        - Europe Ouest
+        - USA Ouest 2
+        - USA Ouest 3
     - **Nom** : *Entrez un nom unique.*
     - **Niveau tarifaire** : sélectionnez **F0** (*gratuit*) ou **S** (*standard*) si F n’est pas disponible.
     - **Compte de stockage** : nouveau compte de stockage :

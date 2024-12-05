@@ -39,7 +39,17 @@ Si vous n’en avez pas encore dans votre abonnement, vous devez approvisionner 
 
 1. Sélectionnez **Vérifier + créer**, puis **Créer** pour provisionner la ressource.
 1. Attendez la fin du déploiement, puis accédez à la ressource déployée.
-1. Consultez la page **Clés et points de terminaison**. Vous aurez besoin des informations figurant cette page plus loin dans l’exercice.
+1. Consultez la page **Clés et points de terminaison**. Plus loin dans l’exercice, vous aurez besoin des informations disponibles sur cette page.
+
+## Rôles pour votre utilisateur
+> **REMARQUE** : si vous ignorez cette étape, vous recevrez une erreur 403 lorsque vous tenterez de vous connecter à votre projet personnalisé. Il est important que ce rôle soit attribué à votre utilisateur actuel pour accéder aux données blob du compte de stockage, même si vous êtes le propriétaire du compte de stockage.**
+
+1. Accédez à la page de votre compte de stockage dans le portail Azure.
+2. Sélectionnez **Contrôle d’accès (IAM)** dans le menu de navigation de gauche.
+3. Sélectionnez **Ajouter** pour Ajouter des attributions de rôle, puis choisissez le rôle **Contributeur aux données Blob du stockage** sur le compte de stockage.
+4. Dans le champ **Attribuer l’accès à**, sélectionnez **Utilisateur, groupe ou principal du service**.
+5. Sélectionnez **Sélectionner des membres**.
+6. Sélectionnez votre flux utilisateur. Vous pouvez rechercher des noms d’utilisateur dans le champ **Sélectionner**.
 
 ## Charger des exemples d’annonces
 

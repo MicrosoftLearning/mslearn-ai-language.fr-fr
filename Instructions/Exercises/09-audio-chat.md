@@ -6,7 +6,7 @@ lab:
 
 # Développer une application de conversation avec fonction audio.
 
-Dans cet exercice, vous utiliserez le modèle génératif d’IA *Phi-4-multimodal-instruct* pour générer des réponses à des invites comprenant des fichiers audio. Vous allez développer une application qui aide l’IA à fournir des produits frais dans une épicerie grâce á Azure AI Foundry et au service d’inférence de modèle Azure AI.
+Dans cet exercice, vous utiliserez le modèle génératif d’IA *Phi-4-multimodal-instruct* pour générer des réponses à des invites comprenant des fichiers audio. Vous allez développer une application qui fournit une assistance basée sur l’IA pour une entreprise distribuant des produits frais, à l’aide d’Azure AI Foundry et du service d’inférence du modèle d’IA Azure pour résumer les messages vocaux laissés par les clients.
 
 Cet exercice prend environ **30** minutes.
 
@@ -95,13 +95,13 @@ Maintenant que vous avez déployé le modèle, vous pouvez utiliser le déploiem
     **Python**
 
     ```
-    cd mslearn-ai-audio/Labfiles/09-audio-chat/python
+    cd mslearn-ai-audio/Labfiles/09-audio-chat/Python
     ```
 
     **C#**
 
     ```
-    cd mslearn-ai-audio/Labfiles/09-audio-chat/c-sharp
+    cd mslearn-ai-audio/Labfiles/09-audio-chat/C-sharp
     ```
 
 1. Dans le volet de ligne de commande Cloud Shell, saisissez la commande suivante pour installer les bibliothèques que vous utiliserez, c’est-à-dire :
@@ -111,7 +111,7 @@ Maintenant que vous avez déployé le modèle, vous pouvez utiliser le déploiem
     ```
     python -m venv labenv
     ./labenv/bin/Activate.ps1
-    pip install python-dotenv azure-identity azure-ai-projects azure-ai-inference
+    pip install -r requirements.txt azure-identity azure-ai-projects azure-ai-inference
     ```
 
     **C#**
@@ -173,9 +173,6 @@ Maintenant que vous avez déployé le modèle, vous pouvez utiliser le déploiem
         SystemMessage,
         UserMessage,
         TextContentItem,
-        AudioContentItem,
-        InputAudio,
-        AudioContentFormat,
     )
     ```
 
@@ -230,13 +227,13 @@ Maintenant que vous avez déployé le modèle, vous pouvez utiliser le déploiem
 
 1. Dans l’éditeur de code, pour le fichier **audio-chat.py**, dans la section de boucle, sous le commentaire **Obtenir une réponse à l’entrée audio**, ajoutez le code suivant pour soumettre une invite contenant l’audio suivant :
 
-    <video controls src="../media/manzanas.mp4" title="une demande de pommes" width="150"></video>
+    <video controls src="../media/avocados.mp4" title="une demande d’avocats" width="150"></video>
 
     **Python**
 
     ```python
     # Get a response to audio input
-    file_path = "https://github.com/microsoftlearning/mslearn-ai-language/raw/refs/heads/main/labfiles/09-audio-chat/data/manzanas.mp3"
+    file_path = "https://github.com/MicrosoftLearning/mslearn-ai-language/raw/refs/heads/main/Labfiles/09-audio-chat/data/avocados.mp3"
     response = chat_client.complete(
         messages=[
             SystemMessage(system_message),
@@ -258,7 +255,7 @@ Maintenant que vous avez déployé le modèle, vous pouvez utiliser le déploiem
 
     ```csharp
     // Get a response to audio input
-    string audioUrl = "https://github.com/microsoftlearning/mslearn-ai-language/raw/refs/heads/main/labfiles/09-audio-chat/data/manzanas.mp3";
+    string audioUrl = "https://github.com/MicrosoftLearning/mslearn-ai-language/raw/refs/heads/main/Labfiles/09-audio-chat/data/avocados.mp3";
     var requestOptions = new ChatCompletionsOptions()
     {
         Messages =
@@ -290,21 +287,25 @@ Maintenant que vous avez déployé le modèle, vous pouvez utiliser le déploiem
     dotnet run
     ```
 
-1. Quand vous y êtes invité, entrez l’invite suivante : `What is this customer saying in English?`.
+1. Quand vous y êtes invité, entrez l’invite 
+
+    ```
+    Can you summarize this customer's voice message?
+    ```
 
 1. Vérifiez la réponse.
 
-### Utiliser une autre invite
+### Utiliser un autre fichier audio
 
 1. Dans l’éditeur de code, recherchez le code que vous avez ajouté précédemment sous le commentaire **Obtenir une réponse à l’entrée audio**. Modifiez ensuite le code comme suit pour sélectionner un autre fichier audio :
 
-    <video controls src="../media/caomei.mp4" title="une demande de fraises" width="150"></video>
+    <video controls src="../media/fresas.mp4" title="une demande de fraises" width="150"></video>
 
     **Python**
 
     ```python
     # Get a response to audio input
-    file_path = "https://github.com/microsoftlearning/mslearn-ai-language/raw/refs/heads/main/labfiles/09-audio-chat/data/caomei.mp3"
+    file_path = "https://github.com/MicrosoftLearning/mslearn-ai-language/raw/refs/heads/main/Labfiles/09-audio-chat/data/fresas.mp3"
     response = chat_client.complete(
         messages=[
             SystemMessage(system_message),
@@ -326,7 +327,7 @@ Maintenant que vous avez déployé le modèle, vous pouvez utiliser le déploiem
 
     ```csharp
     // Get a response to audio input
-    string audioUrl = "https://github.com/microsoftlearning/mslearn-ai-language/raw/refs/heads/main/labfiles/09-audio-chat/data/caomei.mp3";
+    string audioUrl = "https://github.com/MicrosoftLearning/mslearn-ai-language/raw/refs/heads/main/Labfiles/09-audio-chat/data/fresas.mp3";
     var requestOptions = new ChatCompletionsOptions()
     {
         Messages =
@@ -358,10 +359,10 @@ Maintenant que vous avez déployé le modèle, vous pouvez utiliser le déploiem
     dotnet run
     ```
 
-1. Quand vous y êtes invité, entrez l’invite suivante :
-
+1. Quand vous y êtes invité, entrez l’invite suivante : 
+    
     ```
-    A customer left this voice message, can you summarize it?
+    Can you summarize this customer's voice message? Is it time-sensitive?
     ```
 
 1. Vérifiez la réponse. Ensuite, entrez `quit` pour quitter le programme.

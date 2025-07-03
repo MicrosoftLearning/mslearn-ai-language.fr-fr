@@ -6,13 +6,17 @@ import os
 
 
 def main():
+
+    # Clear the console
+    os.system('cls' if os.name=='nt' else 'clear')
+
     try:
         global speech_config
 
-        # Get Configuration Settings
+        # Get config settings
         load_dotenv()
-        ai_key = os.getenv('SPEECH_KEY')
-        ai_region = os.getenv('SPEECH_REGION')
+        project_key = os.getenv('PROJECT_KEY')
+        location = os.getenv('LOCATION')
 
         # Configure speech service
         

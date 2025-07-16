@@ -10,15 +10,20 @@ namespace speaking_clock
     class Program
     {
         private static SpeechConfig speechConfig;
+
         static async Task Main(string[] args)
         {
+
+            // Clear the console
+            Console.Clear();
+
             try
             {
-                // Get config settings from AppSettings
+                // Get config settings
                 IConfigurationBuilder builder = new ConfigurationBuilder().AddJsonFile("appsettings.json");
                 IConfigurationRoot configuration = builder.Build();
-                string aiSvcKey = configuration["SpeechKey"];
-                string aiSvcRegion = configuration["SpeechRegion"];
+                string projectKey = configuration["PROJECT_KEY"];
+                string location = configuration["LOCATION"];
 
                 // Configure speech service
 

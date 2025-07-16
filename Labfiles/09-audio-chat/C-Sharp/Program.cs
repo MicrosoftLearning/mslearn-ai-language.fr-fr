@@ -1,9 +1,8 @@
 ﻿using System;
-using Azure;
-using System.IO;
-using System.Text;
 using System.Collections.Generic;
 using Microsoft.Extensions.Configuration;
+using System.Net.Http;
+using System.Threading.Tasks;
 
 // Add references
 
@@ -22,18 +21,13 @@ namespace chat_app
                 // Get configuration settings
                 IConfigurationBuilder builder = new ConfigurationBuilder().AddJsonFile("appsettings.json");
                 IConfigurationRoot configuration = builder.Build();
-                string project_connection = configuration["PROJECT_CONNECTION"];
+                string project_connection = configuration["PROJECT_ENDPOINT"];
                 string model_deployment = configuration["MODEL_DEPLOYMENT"];
-
-
 
                 // Initialize the project client
 
 
-
                 // Get a chat client
-
-
 
 
                 // Initialize prompts
@@ -59,9 +53,11 @@ namespace chat_app
                     {
                         Console.WriteLine("Getting a response ...\n");
 
+                        // Encode the audio file
+
 
                         // Get a response to audio input
-                        
+
 
                     }
                 }

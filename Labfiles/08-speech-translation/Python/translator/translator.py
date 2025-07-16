@@ -12,8 +12,8 @@ def main():
 
         # Get Configuration Settings
         load_dotenv()
-        ai_key = os.getenv('SPEECH_KEY')
-        ai_region = os.getenv('SPEECH_REGION')
+        project_key = os.getenv('PROJECT_KEY')
+        location = os.getenv('LOCATION')
 
         # Configure translation
 

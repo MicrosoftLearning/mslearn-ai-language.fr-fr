@@ -21,13 +21,12 @@ namespace speech_translation
                 // Get config settings from AppSettings
                 IConfigurationBuilder builder = new ConfigurationBuilder().AddJsonFile("appsettings.json");
                 IConfigurationRoot configuration = builder.Build();
-                string aiSvcKey = configuration["SpeechKey"];
-                string aiSvcRegion = configuration["SpeechRegion"];
+                string projectKey = configuration["PROJECT_KEY"];
+                string location = configuration["LOCATION"];
 
-                // Set console encoding to unicode
-                Console.InputEncoding = Encoding.Unicode;
-                Console.OutputEncoding = Encoding.Unicode;
-
+                // Set console encoding to UTF-8
+                Console.InputEncoding = Encoding.UTF8;
+                Console.OutputEncoding = Encoding.UTF8;
 
                 // Configure translation
 

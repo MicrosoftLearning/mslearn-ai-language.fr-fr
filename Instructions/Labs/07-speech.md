@@ -243,9 +243,17 @@ Le langage SSML (Speech Synthesis Markup Language) vous permet de personnaliser 
     
     <video controls src="https://github.com/MicrosoftLearning/mslearn-ai-language/raw/refs/heads/main/Instructions/media/Output2.mp4" title="L’heure est 5:30. Heure de fin de ce labo." width="150"></video>
 
-## (FACULTATIF) Que se passe-t-il si vous avez un micro et un haut-parleur ?
+## Nettoyage
 
-Dans cet exercice, vous avez utilisé des fichiers audio pour l’entrée vocale et la sortie. Voyons comment le code peut être modifié pour utiliser du matériel audio.
+Si vous avez terminé d’explorer Azure AI Speech, vous devez supprimer les ressources que vous avez créées dans cet exercice pour éviter d’entraîner des coûts Azure inutiles.
+
+1. Fermez le volet Azure Cloud Shell.
+1. Dans le portail Azure, accédez à la ressource Azure AI Speech que vous avez créée dans cette activité.
+1. Dans la page de la ressource, sélectionnez **Supprimer** et suivez les instructions pour supprimer la ressource.
+
+## Que se passe-t-il si vous avez un micro et un haut-parleur ?
+
+Dans cet exercice, l’environnement Azure Cloud Shell que nous avons utilisé ne prend pas en charge le matériel audio. Vous avez donc utilisé des fichiers audio pour l’entrée et la sortie vocales. Voyons comment le code peut être modifié pour utiliser du matériel audio si vous en avez à disposition.
 
 ### Utilisation de la reconnaissance vocale avec un microphone
 
@@ -292,14 +300,6 @@ if speak.reason != speech_sdk.ResultReason.SynthesizingAudioCompleted:
 ```
 
 > **Note** : le haut-parleur par défaut du système est la sortie audio par défaut. Vous pouvez donc également simplement omettre l’AudioConfig complètement.
-
-## Nettoyage
-
-Si vous avez terminé d’explorer Azure AI Speech, vous devez supprimer les ressources que vous avez créées dans cet exercice pour éviter d’entraîner des coûts Azure inutiles.
-
-1. Fermez le volet Azure Cloud Shell.
-1. Dans le portail Azure, accédez à la ressource Azure AI Speech que vous avez créée dans cette activité.
-1. Dans la page de la ressource, sélectionnez **Supprimer** et suivez les instructions pour supprimer la ressource.
 
 ## Plus d’informations
 

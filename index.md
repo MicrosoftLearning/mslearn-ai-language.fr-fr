@@ -14,6 +14,7 @@ Les exercices suivants sont conçus pour vous fournir une expérience d’appren
 
 {% assign labs = site.pages | where_exp:"page", "page.url contains '/Instructions/Labs'" %} {% for activity in labs  %}
 <hr>
+
 ### [{{ activity.lab.title }}]({{ site.github.url }}{{ activity.url }})
 
 {{activity.lab.description}}

@@ -56,7 +56,7 @@ Vous allez développer votre code à l’aide de Cloud Shell à partir du porta
     git clone https://github.com/microsoftlearning/mslearn-ai-language
     ```
 
-    > **Conseil** : lorsque vous entrez des commandes dans le Cloud Shell, la sortie peut occuper une grande partie de la mémoire tampon d’écran. Vous pouvez effacer le contenu de l’écran en saisissant la commande `cls` pour faciliter le focus sur chaque tâche.
+    > **Conseil** : lorsque vous saisissez des commandes dans le Cloud Shell, la sortie peut occuper une grande partie de la mémoire tampon d’écran. Vous pouvez effacer le contenu de l’écran en saisissant la commande `cls` pour faciliter le focus sur chaque tâche.
 
 1. Une fois le référentiel cloné, accédez au dossier contenant les fichiers de code de l’application :  
 

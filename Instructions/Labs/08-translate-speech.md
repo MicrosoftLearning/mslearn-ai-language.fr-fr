@@ -227,7 +227,7 @@ Si vous avez terminé d’explorer le service Azure AI Speech, vous pouvez sup
 
 ## Que se passe-t-il si vous avez un micro et un haut-parleur ?
 
-Dans cet exercice, vous avez utilisé des fichiers audio pour l’entrée vocale et la sortie. Voyons comment le code peut être modifié pour utiliser du matériel audio.
+Dans cet exercice, l’environnement Azure Cloud Shell que nous avons utilisé ne prend pas en charge le matériel audio. Vous avez donc utilisé des fichiers audio pour l’entrée et la sortie vocales. Voyons comment le code peut être modifié pour utiliser du matériel audio si vous en avez à disposition.
 
 ### Utilisation de la traduction vocale avec un microphone
 
@@ -258,7 +258,7 @@ Dans cet exercice, vous avez utilisé des fichiers audio pour l’entrée vocale
             "hi": "hi-IN-MadhurNeural"
    }
    speech_config.speech_synthesis_voice_name = voices.get(targetLanguage)
-   audio_config_out = speech_sdk.audio.AudioConfig(use_default_speaker=True)
+   audio_config_out = speech_sdk.audio.AudioOutputConfig(use_default_speaker=True)
    speech_synthesizer = speech_sdk.SpeechSynthesizer(speech_config, audio_config_out)
    speak = speech_synthesizer.speak_text_async(translation).get()
    if speak.reason != speech_sdk.ResultReason.SynthesizingAudioCompleted:

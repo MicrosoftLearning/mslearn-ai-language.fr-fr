@@ -1,73 +1,73 @@
-# Requirements
+# Spécifications
 
-## Run in Cloud Shell
+## Exécuter dans Cloud Shell
 
-* Azure subscription with OpenAI access
-* If running in the Azure Cloud Shell, choose the Bash shell. The Azure CLI and Azure Developer CLI are included in the Cloud Shell.
+* Abonnement Azure avec accès OpenAI
+* Si vous exécutez Azure Cloud Shell, choisissez l’interpréteur de commandes Bash. Azure CLI et Azure Developer CLI sont inclus dans Cloud Shell.
 
-## Run locally
+## Exécution locale
 
-* You can run the web app locally after running the deployment script:
+* Vous pouvez exécuter l’application web localement après avoir exécuté le script de déploiement :
     * [Azure Developer CLI (azd)](https://learn.microsoft.com/en-us/azure/developer/azure-developer-cli/install-azd)
     * [Azure CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli)
-    * Azure subscription with OpenAI access
+    * Abonnement Azure avec accès OpenAI
 
 
-## Environment Variables
+## Variables d'environnement
 
-The  `.env` file is created by the *azdeploy.sh* script. The AI model endpoint, API key, and model name are added during the deployment of the resources.
+Le fichier `.env` est créé par le script *azdeploy.sh*. Le point de terminaison du modèle IA, la clé API et le nom du modèle sont ajoutés pendant le déploiement des ressources.
 
-## Azure resource deployment
+## Déploiement de ressources Azure
 
-The provided `azdeploy.sh` creates the required resources in Azure:
+Le `azdeploy.sh` fourni crée les ressources requises dans Azure :
 
-* Change the two variables at the top of the script to match your needs, don't change anything else.
-* The script:
-    * Deploys the *gpt-4o* model using AZD.
-    * Creates Azure Container Registry service
-    * Uses ACR tasks to build and deploy the Dockerfile image to ACR
-    * Creates the App Service Plan
-    * Creates the App Service Web App
-    * Configures the web app for container image in ACR
-    * Configures the web app environment variables
-    * The script will provide the App Service endpoint
+* Modifiez les deux variables en haut du script en fonction de vos besoins, ne modifiez rien d’autre.
+* Le script :
+    * Déploie le modèle *gpt-4o* à l’aide d’AZD.
+    * Crée le service Azure Container Registry
+    * Utilise les tâches ACR pour générer et déployer l’image Dockerfile vers ACR
+    * Crée le plan App Service
+    * Crée l’application web App Service
+    * Configure l’application web pour l’image conteneur dans ACR
+    * Configure les variables d’environnement de l’application web
+    * Le script fournira le point de terminaison App Service
 
-The script provides two deployment options: 1. Full deployment; and 2. Redeploy the image only. Option 2 is only for post-deployment when you want to experiment with changes in the application. 
+Le script propose deux options de déploiement : 1. Déploiement complet ; et 2. Redéployer l’image uniquement. L’option 2 est uniquement destinée à être utilisée après le déploiement, lorsque vous souhaitez tester des modifications dans l’application. 
 
-> Note: You can run the script in PowerShell, or Bash, using the `bash azdeploy.sh` command, this command also let's you run the script in Bash without having to make it an executable.
+> Note : Vous pouvez exécuter le script dans PowerShell ou Bash à l’aide de la commande `bash azdeploy.sh`. Cette commande vous permet également d’exécuter le script dans Bash sans avoir à le rendre exécutable.
 
-## Local development
+## Développement local
 
-### Provision AI model to Azure
+### Provisionner un modèle IA sur Azure
 
-You can run the run the project locally and only provision the AI model following these steps:
+Vous pouvez exécuter le projet localement et provisionner uniquement le modèle IA en suivant ces étapes :
 
-1. **Initialize environment** (choose a descriptive name):
+1. **Initialiser l’environnement** (choisissez un nom descriptif) :
 
    ```bash
    azd env new gpt-realtime-lab --confirm
    # or: azd env new your-name-gpt-experiment --confirm
    ```
    
-   **Important**: This name becomes part of your Azure resource names!  
-   The `--confirm` flag sets this as your default environment without prompting.
+   **Important** : Ce nom fera partie des noms de vos ressources Azure !  
+   L’indicateur `--confirm` définit cet environnement comme votre environnement par défaut sans confirmation.
 
-1. **Set your resource group**:
+1. **Définissez votre groupe de ressources** :
 
    ```bash
    azd env set AZURE_RESOURCE_GROUP "rg-your-name-gpt"
    ```
 
-1. **Login and provision AI resources**:
+1. **Connectez-vous et provisionnez les ressources d’IA** :
 
    ```bash
    az login
    azd provision
    ```
 
-    > **Important**: Do NOT run `azd deploy` - the app is not configured in the AZD templates.
+    > **Important** : N’exécutez PAS `azd deploy` : l’application n’est pas configurée dans les modèles AZD.
 
-If you only provisioned the model using the `azd provision` method you MUST create a `.env` file in the root of the directory with the following entries:
+Si vous avez uniquement provisionné le modèle à l’aide de la méthode `azd provision`, vous DEVEZ créer un fichier `.env` à la racine du répertoire avec les entrées suivantes :
 
 ```
 AZURE_VOICE_LIVE_ENDPOINT=""
@@ -78,27 +78,27 @@ VOICE_LIVE_INSTRUCTIONS="You are a helpful AI assistant with a focus on world hi
 VOICE_LIVE_VERBOSE="" #Suppresses excessive logging to the terminal if running locally
 ```
 
-Notes:
+Remarques :
 
-1. The endpoint is the endpoint for the model and it should only include `https://<proj-name>.cognitiveservices.azure.com`.
-1. The API key is the key for the model.
-1. The model is the model name used during deployment.
-1. You can retrieve these values from the AI Foundry portal.
+1. Le point de terminaison est le point de terminaison du modèle et ne doit inclure que `https://<proj-name>.cognitiveservices.azure.com`.
+1. La clé API est la clé du modèle.
+1. Le modèle est le nom du modèle utilisé pendant le déploiement.
+1. Vous pouvez récupérer ces valeurs à partir du portail AI Foundry.
 
-### Running the project locally
+### Exécution locale du projet
 
-The project was was created and managed using **uv**, but it is not required to run. 
+Le projet a été créé et géré à l’aide de **uv**, mais ce n’est pas obligatoire pour l’exécution. 
 
-If you have **uv** installed:
+Si vous avez **uv** installé :
 
-* Run `uv venv` to create the environment
-* Run `uv sync` to add packages
-* Alias created for web app: `uv run web` to start the `flask_app.py` script.
-* requirements.txt file created with `uv pip compile pyproject.toml -o requirements.txt`
+* Exécutez `uv venv` pour créer l’environnement
+* Exécutez `uv sync` pour ajouter des packages
+* Un alias est créé pour l’application web : `uv run web` pour démarrer le script `flask_app.py`.
+* fichier requirements.txt créé avec `uv pip compile pyproject.toml -o requirements.txt`
 
-If you don't have **uv** installed:
+Si vous n’avez pas **uv** installé :
 
-* Create environment: `python -m venv .venv`
-* Activate environment: `.\.venv\Scripts\Activate.ps1`
-* Install dependencies: `pip install -r requirements.txt`
-* Run application (from project root): `python .\src\real_time_voice\flask_app.py`
+* Créez l’environnement : `python -m venv .venv`
+* Activez l’environnement : `.\.venv\Scripts\Activate.ps1`
+* Installez les dépendances : `pip install -r requirements.txt`
+* Exécutez l’application (depuis la racine du projet) : `python .\src\real_time_voice\flask_app.py`

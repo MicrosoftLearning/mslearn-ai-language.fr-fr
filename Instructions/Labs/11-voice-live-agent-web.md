@@ -12,7 +12,7 @@ Bien que cet exercice soit basé sur Python, vous pouvez développer des applica
 
 - [Bibliothèque cliente Azure VoiceLive pour .NET](https://www.nuget.org/packages/Azure.AI.VoiceLive/)
 
-Tâches effectuées dans cet exercice :
+Tâches effectuées dans cet exercice :
 
 * Téléchargez les fichiers de base de l’application
 * Ajoutez du code pour terminer l’application web
@@ -248,7 +248,7 @@ Vous ne devez modifier que deux valeurs en haut du script de déploiement **azde
 1. Exécutez les commandes suivantes dans le Cloud Shell pour commencer à modifier le script de déploiement.
 
     ```bash
-    cd ~/voice-live-web
+    cd ~/01-voice-live-web
     ```
     
     ```bash

@@ -44,7 +44,7 @@ Si vous n’en avez pas encore dans votre abonnement, vous devez configurer une 
 
 ## Créer un projet de réponses aux questions
 
-Pour créer une base de connaissances permettant de répondre aux questions dans votre ressource Azure AI Language, vous pouvez utiliser le portail Language Studio pour créer un projet de réponse aux questions. Dans ce cas, vous allez créer une base de connaissances contenant des questions et des réponses sur [Microsoft Learn](https://docs.microsoft.com/learn).
+Pour créer une base de connaissances permettant de répondre aux questions dans votre ressource Azure AI Language, vous pouvez utiliser le portail Language Studio pour créer un projet de réponse aux questions. Dans ce cas, vous allez créer une base de connaissances contenant des questions et des réponses sur [Microsoft Learn](https://learn.microsoft.com/training/).
 
 1. Dans un nouvel onglet de navigateur, accédez au portail Language Studio à l’adresse [https://language.cognitive.azure.com/](https://language.cognitive.azure.com/), puis connectez-vous en utilisant le compte Microsoft associé à votre abonnement Azure.
 1. Si le système vous invite à choisir une ressource Language, sélectionnez les paramètres suivants :
@@ -75,7 +75,7 @@ Vous pouvez créer une base de connaissances à partir de zéro, mais il est cou
 
 1. Dans la page **Gérer les sources** de votre projet de réponse aux questions, dans la liste **&#9547; Ajouter une source**, sélectionnez **URL**. Ensuite, dans la boîte de dialogue **Ajouter des URL**, cliquez sur **&#9547; Ajouter une URL** et définissez le nom et l’URL suivants, puis sélectionnez **Ajouter tout** pour l’ajouter à la base de connaissances :
     - **Nom :** `Learn FAQ Page`
-    - **URL** : `https://docs.microsoft.com/en-us/learn/support/faq`
+    - **URL** : `https://learn.microsoft.com/en-us/training/support/faq?pivots=general`
 1. Dans la page **Gérer les sources** de votre projet de réponse aux questions, dans la liste **&#9547; Ajouter une source**, sélectionnez **Chitchat**. Dans la boîte de dialogue **Ajouter une conversation de chit-chat**, sélectionnez **Convivial**, puis sélectionnez **Ajouter une conversation de chit-chat**.
 
 ## Modifier la base de connaissances
@@ -84,18 +84,18 @@ Votre base de connaissances a été rempli avec des paires de questions et répo
 
 1. Dans votre projet **LearnFAQ** dans Language Studio, sélectionnez la page **Modifier base de connaissances** pour afficher les paires de questions-réponses existantes (si certains conseils sont affichés, lisez-les et sélectionnez **J’ai compris** pour les ignorer ou sélectionnez **Ignorer tout**).
 1. Dans la base de connaissances, sous l’onglet **Paires question-réponse**, sélectionnez **&#65291;**, puis créez une paire question-réponse avec les paramètres suivants :
-    - **Source** : `https://docs.microsoft.com/en-us/learn/support/faq`
-    - **Question** : `What are Microsoft credentials?`
-    - **Réponse** : `Microsoft credentials enable you to validate and prove your skills with Microsoft technologies.`
+    - **Source** : `https://learn.microsoft.com/en-us/training/support/faq?pivots=general`
+    - **Question** : `What are the different types of modules on Microsoft Learn?`
+    - **Réponse** : `Microsoft Learn offers various types of training modules, including role-based learning paths, product-specific modules, and hands-on labs. Each module contains units with lessons and knowledge checks to help you learn at your own pace.`
 1. Cliquez sur **Terminé**.
-1. Dans la page de la question **What are Microsoft credentials?** (Que sont les titres de compétences Microsoft ?) créée, développez **Questions alternatives**. Ajoutez ensuite la question alternative `How can I demonstrate my Microsoft technology skills?`.
+1. Dans la page de la question **Quels sont les différents types de modules disponibles sur Microsoft Learn ?** créée, développez **Questions alternatives**. Ajoutez ensuite la question alternative `How are training modules organized?`.
 
     Dans certains cas, il est judicieux d’autoriser l’utilisateur à rebondir sur une réponse en créant une invite *multitour* qui lui permet d’affiner de manière itérative la question pour obtenir la réponse dont il a besoin.
 
 1. Sous la réponse que vous avez entrée pour la question sur la certification, développez **Invites de suivi**, ajoutez l’invite de suivi suivante :
-    - **Texte affiché dans l’invite à l’utilisateur** : `Learn more about credentials`.
-    - Sélectionnez l’onglet **Créer un lien vers une nouvelle paire**, puis entrez ce texte : `You can learn more about credentials on the [Microsoft credentials page](https://docs.microsoft.com/learn/credentials/).`
-    - Sélectionnez **Afficher dans le flux contextuel uniquement**. Cette option garantit que la réponse n’est jamais retournée dans le contexte d’une question de suivi de la question de certification d’origine.
+    - **Texte affiché dans l’invite à l’utilisateur** : `Learn more about training`.
+    - Sélectionnez l’onglet **Créer un lien vers une nouvelle paire**, puis entrez ce texte : `You can explore modules and learning paths on the [Microsoft Learn training page](https://learn.microsoft.com/training/).`
+    - Sélectionnez **Afficher dans le flux contextuel uniquement**. Cette option garantit que la réponse n'est jamais renvoyée que dans le contexte d'une question complémentaire issue de la question initiale du module.
 1. Sélectionnez **Ajouter une invite**.
 
 ## Entraîner et tester la base de connaissances
@@ -107,8 +107,8 @@ Maintenant que vous avez une base de connaissances, vous pouvez la tester dans l
 1. Dans le volet de test, dans la partie supérieure, décochez **Inclure une réponse courte** (si l’option n’est pas déjà décochée). Dans la partie inférieure, entrez le message `Hello`. Une réponse appropriée doit être retournée.
 1. Dans la partie inférieure du volet de test, entrez le message `What is Microsoft Learn?`. Une réponse appropriée du FAQ devrait être retournée.
 1. Entrez le message `Thanks!` Une réponse de conversation appropriée doit être retournée.
-1. Entrez le message `Tell me about Microsoft credentials`. La réponse que vous avez créée doit être retournée avec un lien d’invite de suivi.
-1. Sélectionnez le lien de suivi **En savoir plus sur les certifications**. La réponse de suivi avec un lien vers la page de certification doit être retournée.
+1. Entrez le message `What are the different types of modules on Microsoft Learn?`. La réponse que vous avez créée doit être retournée avec un lien d’invite de suivi.
+1. Sélectionnez le lien de suivi **En savoir plus sur les formations**. La réponse suivante, accompagnée d'un lien vers la page de formation, doit être renvoyée.
 1. Lorsque vous avez fini de tester la base de connaissances, fermez le volet de test.
 
 ## Déployer la base de connaissances
@@ -141,7 +141,7 @@ Vous allez développer votre application de réponses aux questions à l’aide 
     git clone https://github.com/microsoftlearning/mslearn-ai-language
     ```
 
-    > **Conseil** : lorsque vous saisissez des commandes dans le Cloud Shell, la sortie peut occuper une grande partie de la mémoire tampon d’écran. Vous pouvez effacer le contenu de l’écran en saisissant la commande `cls` pour faciliter le focus sur chaque tâche.
+    > **Conseil** : lorsque vous entrez des commandes dans le Cloud Shell, la sortie peut occuper une grande partie de la mémoire tampon d’écran. Vous pouvez effacer le contenu de l’écran en saisissant la commande `cls` pour faciliter le focus sur chaque tâche.
 
 1. Une fois le référentiel cloné, accédez au dossier contenant les fichiers de code de l’application :  
 
